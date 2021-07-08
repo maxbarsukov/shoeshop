@@ -18,6 +18,11 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
+# Search Engine Optimization (SEO) plugin for Ruby on Rails applications
+gem 'meta-tags', '~> 2.14'
+# Simple Ruby on Rails plugin for creating and managing a breadcrumb navigation
+gem 'breadcrumbs_on_rails', '~> 4.1'
+
 # The fastest JSON parser and object serializer.
 gem 'oj', '~> 3.11', '>= 3.11.8'
 # An experimental Object-base Parallel Evaluation Environment.
