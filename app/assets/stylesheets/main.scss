@@ -1,0 +1,45 @@
+.drop > .btn-group > a {
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  top: -1px;
+}
+
+.btn-group {
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  top: -1px;
+}
+
+form .has-success .form-control {
+  border-color: green;
+}
+form .has-error .form-control {
+  border-color: red;
+}
+.has-error, .has-success {
+  position: relative;
+}
+.form-control-feedback {
+  right: 10px;
+  top: 25px;
+}
+
+.preloader {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:9999;
+  background-color:#fefefe;
+  opacity: .7;
+  display: none;
+}
+.preloader img {
+  position:relative;
+  left:50%;
+  top:50vh;
+  margin:-100px 0 0 -100px;
+}
