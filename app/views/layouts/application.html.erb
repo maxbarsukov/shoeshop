@@ -3,6 +3,7 @@
   <head>
     <%= display_meta_tags title: @page_title, description: @page_description, keywords: @page_keywords %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,6 +13,8 @@
   </head>
 
   <body>
+  <div class="content">
     <%= yield %>
+  </div>
   </body>
 </html>
