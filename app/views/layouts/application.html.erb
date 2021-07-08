@@ -13,6 +13,10 @@
   </head>
   <body>
 
+  <!--top-header-->
+  <%= render 'include/main/top_header' %>
+  <!--top-header-->
+
   <!--start-logo-->
   <div class="logo">
     <%= link_to root_path do %>
@@ -21,9 +25,17 @@
   </div>
   <!--start-logo-->
 
+  <!--bottom-header-->
+  <%= render 'include/main/bottom_header' %>
+  <!--bottom-header-->
+
   <div class="content">
     <%= yield %>
   </div>
+
+  <!--footer-->
+  <%= render 'include/main/footer' %>
+  <!--footer-->
 
   </body>
 </html>
