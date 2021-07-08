@@ -7,7 +7,7 @@ brand_attributes = [{
                       img: 'ecco.jpg', description: Faker::Superhero.name
                     },
                     {
-                      title: 'Geox', bytitle: 'geox', img: 'geox.jpg',
+                      title: 'Gucci', bytitle: 'gucci', img: 'gucci.jpg',
                       description: Faker::Superhero.name
                     },
                     {
