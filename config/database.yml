@@ -15,4 +15,5 @@ production:
   <<: *default
   database: yetanothershop_production
   username: yetanothershop
+  host: localhost
   password: <%= ENV['YETANOTHERSHOP_DATABASE_PASSWORD'] %>
