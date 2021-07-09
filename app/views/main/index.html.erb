@@ -49,8 +49,41 @@
   <!-- product-starts-->
   <div class="product">
     <div class="container">
+      <div class="product-top">
+        <div class="product-one">
+          <% @hits.each do |hit| %>
+            <div class="col-md-3 product-left">
+              <div class="product-main simpleCart_shelfItem">
+                <a href="product/<%= hit.id %>" class="mask">
+                  <%= image_tag 'products/' << hit.img, alt: 'Product', class: 'img-responsive zoom-img' %>
+                </a>
 
+                <div class="product-bottom">
+                  <h3><a href="product/<%= hit.id %>"><%= hit.title %></a></h3>
+                  <p>Explore Now</p>
+                  <h4>
+                    <%= link_to "cart_items_path(id: hit.id)", class: 'add-to-cart-link', data: { id: hit.id } do %>
+                      <i></i>
+                    <% end %>
+                    <span class="item_price">$ <%= hit.price %></span>
+                    <% if hit.old_price %>
+                      <small><del>$ <%= hit.old_price %></del></small>
+                    <% end %>
+                  </h4>
+                </div>
+                <div class="srch">
+                  <span>
+                    - <%= hit.discount %> %
+                  </span>
+                </div>
+              </div>
+            </div>
+          <% end %>
+          <div class="clearfix"></div>
+        </div>
+      </div>
     </div>
   </div>
-  <!-- product-end-->
 <% end %>
+<!-- <input type="hidden" value="<%#= !current_user.nil? ? 88 : 99 %>" id="cart_access"/>-->
+<!--product-end-->
