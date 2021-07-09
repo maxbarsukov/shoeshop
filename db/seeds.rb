@@ -15,11 +15,11 @@ brand_attributes = [{
                       img: 'hugo-boss.jpg', description: Faker::Superhero.name
                     },
                     {
-                      title: 'Lacoste', bytitle: 'lacoste', img: 'lacoste.png',
+                      title: 'Lacoste', bytitle: 'lacoste', img: 'lacoste.jpg',
                       description: Faker::Superhero.name
                     },
                     {
-                      title: 'Prada', bytitle: 'prada', img: 'prada.png',
+                      title: 'Prada', bytitle: 'prada', img: 'prada.jpg',
                       description: Faker::Superhero.name
                     }]
 
@@ -64,7 +64,7 @@ product_attributes = [
     status: 1,
     keywords: 'gucci sneaker italy',
     description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-3.png',
+    img: 'p-3.jpg',
     hit: 1
   },
   {
@@ -77,7 +77,7 @@ product_attributes = [
     status: 1,
     keywords: 'hugo boss trainers',
     description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-4.png',
+    img: 'p-4.jpg',
     hit: 1
   },
   {
@@ -90,7 +90,7 @@ product_attributes = [
     status: 1,
     keywords: 'hugo boss leather shoes',
     description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-5.png',
+    img: 'p-5.jpg',
     hit: 1
   },
   {
@@ -116,7 +116,7 @@ product_attributes = [
     status: 1,
     keywords: 'lacoste croco',
     description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-7.png',
+    img: 'p-7.jpg',
     hit: 1
   },
   {
@@ -129,7 +129,7 @@ product_attributes = [
     status: 1,
     keywords: 'lacoste suruga',
     description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-8.png',
+    img: 'p-8.jpg',
     hit: 1
   },
   {
@@ -142,7 +142,7 @@ product_attributes = [
     status: 1,
     keywords: 'lacoste sneakers',
     description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-9.png',
+    img: 'p-9.jpg',
     hit: 1
   },
   {
@@ -155,7 +155,7 @@ product_attributes = [
     status: 1,
     keywords: 'prada loafers',
     description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-10.png',
+    img: 'p-10.jpg',
     hit: 1
   },
   {
@@ -168,7 +168,7 @@ product_attributes = [
     status: 1,
     keywords: 'prada derby shoes',
     description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-11.png',
+    img: 'p-11.jpg',
     hit: 1
   },
   {
@@ -181,7 +181,7 @@ product_attributes = [
     status: 1,
     keywords: 'prada slip-ons',
     description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-12.png',
+    img: 'p-12.jpg',
     hit: 1
   },
   {
@@ -194,7 +194,7 @@ product_attributes = [
     status: 1,
     keywords: 'ecco moccasins',
     description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-13.png',
+    img: 'p-13.jpg',
     hit: 1
   },
   {
@@ -207,7 +207,7 @@ product_attributes = [
     status: 1,
     keywords: 'ecco clogs',
     description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-14.png',
+    img: 'p-14.jpg',
     hit: 1
   },
   {
@@ -220,7 +220,7 @@ product_attributes = [
     status: 1,
     keywords: 'ecco sneakers',
     description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-15.png',
+    img: 'p-15.jpg',
     hit: 1
   },
   {
@@ -233,7 +233,7 @@ product_attributes = [
     status: 1,
     keywords: 'ecco sneakers',
     description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-16.png',
+    img: 'p-16.jpg',
     hit: 1
   }
 ]
