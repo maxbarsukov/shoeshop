@@ -1,0 +1,250 @@
+<!--start-breadcrumbs-->
+<div class="breadcrumbs">
+  <div class="container">
+    <div class="breadcrumbs-main">
+      <ol class="breadcrumb">
+        <li><a href="/"><%= render_breadcrumbs %></a></li>
+        <li class="active"><%#= @product.title %></li>
+      </ol>
+    </div>
+  </div>
+</div>
+<!--end-breadcrumbs-->
+<!--start-single-->
+<div class="single contact">
+  <div class="container">
+    <div class="single-main">
+      <div class="col-md-9 single-main-left">
+        <div class="sngl-top">
+          <div class="col-md-5 single-top-left">
+            <div class="flexslider">
+              <ul class="slides">
+                <li data-thumb="<%= asset_path 'products/s-1.jpg' %>">
+                  <div class="thumb-image">
+                    <img src="<%= asset_path 'products/s-1.jpg' %>" data-imagezoom="true" class="img-responsive" alt="Product Image"/>
+                  </div>
+                </li>
+                <li data-thumb="<%= asset_path 'products/s-2.jpg' %>">
+                  <div class="thumb-image">
+                    <img src="<%= asset_path 'products/s-2.jpg' %>" data-imagezoom="true" class="img-responsive" alt="Product Image"/>
+                  </div>
+                </li>
+                <li data-thumb="<%= asset_path 'products/s-3.jpg' %>">
+                  <div class="thumb-image">
+                    <img src="<%= asset_path 'products/s-3.jpg' %>" data-imagezoom="true" class="img-responsive" alt="Product Image"/>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-7 single-top-right">
+            <div class="single-para simpleCart_shelfItem">
+              <h2><%= @product.title %></h2>
+              <div class="star-on">
+                <ul class="star-footer">
+                  <li><a href="#"><i> </i></a></li>
+                  <li><a href="#"><i> </i></a></li>
+                  <li><a href="#"><i> </i></a></li>
+                  <li><a href="#"><i> </i></a></li>
+                  <li><a href="#"><i> </i></a></li>
+                </ul>
+                <div class="review">
+                  <a href="#">1 customer review</a>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+
+              <h5 class="item_price">$ <%= @product.price %> </h5>
+              <% if @product.old_price %>
+                <del><%= @product.old_price %></del>
+              <% end %>
+              <p><%= @product.content %></p>
+              <div class="available">
+                <ul>
+                  <li>Color
+                    <select>
+                      <option>Black</option>
+                      <option>White</option>
+                      <option>Green</option>
+                      <option>Red</option>
+                    </select>
+                  </li>
+                  <li class="size-in">Size
+                    <select>
+                      <option>35</option>
+                      <option>37</option>
+                      <option>39</option>
+                      <option>41</option>
+                      <option>43</option>
+                      <option>45</option>
+                    </select>
+                  </li>
+                  <div class="clearfix"> </div>
+                </ul>
+              </div>
+              <ul class="tag-men">
+                <li><span>CATEGORY</span>
+                  <strong>: <a href="/category/<%#= @product.category.bytitle %>" style="">
+                    <%#= @product.category.title %></a>
+                  </strong>
+                </li>
+              </ul>
+              <div class="quantity">
+                <input type="number" size="4" value="1" name="quantity" min="1" step="1">
+              </div>
+            </div>
+          </div>
+          <div class="clearfix"> </div>
+        </div>
+        <div class="tabs">
+          <ul class="menu_drop">
+            <li class="item1"><a href="#"><img src="<%= asset_path 'arrow.png' %>" alt="">Description</a>
+              <ul>
+                <li class="subitem1"><a href="#">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </a></li>
+                <li class="subitem2"><a href="#">
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </a></li>
+                <li class="subitem3"><a href="#">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </a></li>
+              </ul>
+            </li>
+            <li class="item2"><a href="#"><img src="<%= asset_path 'arrow.png' %>" alt="">Additional information</a>
+              <ul>
+                <li class="subitem1"><a href="#">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </a></li>
+                <li class="subitem2"><a href="#">
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </a></li>
+                <li class="subitem3"><a href="#">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </a></li>
+              </ul>
+            </li>
+            <li class="item3"><a href="#"><img src="<%= asset_path 'arrow.png' %>" alt="">Reviews (10)</a>
+              <ul>
+                <li class="subitem1"><a href="#">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </a></li>
+                <li class="subitem2"><a href="#">
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </a></li>
+                <li class="subitem3"><a href="#">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </a></li>
+              </ul>
+            </li>
+            <li class="item4"><a href="#"><img src="<%= asset_path 'arrow.png' %>" alt="">Helpful Links</a>
+              <ul>
+                <li class="subitem1"><a href="#">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </a></li>
+                <li class="subitem2"><a href="#">
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </a></li>
+                <li class="subitem3"><a href="#">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </a></li>
+              </ul>
+            </li>
+            <li class="item5"><a href="#"><img src="<%= asset_path 'arrow.png' %>" alt="">Make A Gift</a>
+              <ul>
+                <li class="subitem1"><a href="#">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </a></li>
+                <li class="subitem2"><a href="#">
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </a></li>
+                <li class="subitem3"><a href="#">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <% unless @product.related.nil? %>
+          <div class="latestproducts">
+            <div class="product-one">
+              <h3>Related Products</h3>
+              <% @product.related.each do |related| %>
+                <div class="col-md-4 product-left p-left">
+                  <div class="product-main simpleCart_shelfItem">
+                    <%= link_to product_path(related), class: "mask" do %>
+                      <%= image_tag related.img, class: "img-responsive zoom-img" %>
+                    <% end %>
+                    <div class="product-bottom">
+                      <h3><%= link_to related.title, product_path(related) %></h3>
+                      <p>Explore Now</p>
+                      <h4>
+                        <a class="item_add add-to-cart-link" href="cart/add?if=<%= related.id %>" data-id="<%= related.id %>">
+                          <i></i>
+                        </a>
+                        <span class="item_price">$ <%= related.price %></span>
+                        <% if related.old_price %>
+                          <del><%= related.old_price %></del>
+                        <% end %>
+                      </h4>
+                    </div>
+                    <div class="srch">
+                      <span>
+                        - <%= related.discount %> %
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        <% end %>
+
+        <% if recent_products.any? %>
+          <div class="latestproducts">
+            <div class="product-one">
+              <h3>Recently Products</h3>
+
+              <% recent_products.each do |recently| %>
+                <div class="col-md-4 product-left p-left">
+                  <div class="product-main simpleCart_shelfItem">
+                    <%= link_to product_path(recently), class: "mask" do %>
+                      <%= image_tag recently.img, class: "img-responsive zoom-img" %>
+                    <% end %>
+                    <div class="product-bottom">
+                      <h3><%= link_to recently.title, product_path(recently) %></h3>
+                      <p>Explore Now</p>
+                      <h4>
+                        <a class="item_add add-to-cart-link" href="cart/add?if=<%= recently.id %>" data-id="<%= recently.id %>">
+                          <i></i>
+                        </a>
+                        <span class="item_price">$ <%= recently.price %></span>
+                        <% if recently.old_price %>
+                          <del><%= recently.old_price %></del>
+                        <% end %>
+                      </h4>
+                    </div>
+                    <div class="srch">
+                      <span>
+                        - <%= recently.discount %> %
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!--end-single-->

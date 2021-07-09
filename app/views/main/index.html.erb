@@ -54,12 +54,16 @@
           <% @hits.each do |hit| %>
             <div class="col-md-3 product-left">
               <div class="product-main simpleCart_shelfItem">
-                <a href="product/<%= hit.id %>" class="mask">
+                <%= link_to product_path(hit), class: "mask" do %>
                   <%= image_tag 'products/' << hit.img, alt: 'Product', class: 'img-responsive zoom-img' %>
-                </a>
+                <% end %>
 
                 <div class="product-bottom">
-                  <h3><a href="product/<%= hit.id %>"><%= hit.title %></a></h3>
+                  <h3>
+                    <%= link_to product_path(hit) do %>
+                      <%= hit.title %>
+                    <% end %>
+                  </h3>
                   <p>Explore Now</p>
                   <h4>
                     <%= link_to "cart_items_path(id: hit.id)", class: 'add-to-cart-link', data: { id: hit.id } do %>
