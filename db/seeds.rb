@@ -31,7 +31,7 @@ product_attributes = [
   {
     brand_id: '2',
     title: 'Off The Grid high top Gucci Tennis 1977',
-    bytitle: '628717 H9H80 1162',
+    bytitle: '628717-H9H80-1162',
     content: Faker::Lorem.sentence(word_count: 20),
     price: Faker::Commerce.price,
     old_price: Faker::Commerce.price,
@@ -44,7 +44,7 @@ product_attributes = [
   {
     brand_id: '2',
     title: 'Matelassé sling back',
-    bytitle: '659471 BKO00 4514',
+    bytitle: '659471-BKO00-4514',
     content: Faker::Lorem.sentence(word_count: 20),
     price: Faker::Commerce.price,
     old_price: Faker::Commerce.price,
@@ -57,7 +57,7 @@ product_attributes = [
   {
     brand_id: '2',
     title: 'Rhyton sneaker with cat eyes',
-    bytitle: '663723 2SH00 9014',
+    bytitle: '663723-2SH00-9014',
     content: Faker::Lorem.sentence(word_count: 20),
     price: Faker::Commerce.price,
     old_price: Faker::Commerce.price,
@@ -70,7 +70,7 @@ product_attributes = [
   {
     brand_id: '3',
     title: 'Low-top trainers with thermo-bonded trim',
-    bytitle: 'SATURN_LOWP_NYRS - 50452024',
+    bytitle: 'SATURN_LOWP_NYRS-50452024',
     content: Faker::Lorem.sentence(word_count: 20),
     price: Faker::Commerce.price,
     old_price: Faker::Commerce.price,
@@ -83,7 +83,7 @@ product_attributes = [
   {
     brand_id: '3',
     title: 'Italian-made Derby shoes in vegetable-tanned leather',
-    bytitle: 'KENSINGTON_DERB_BU - 50385015',
+    bytitle: 'KENSINGTON_DERB_BU-50385015',
     content: Faker::Lorem.sentence(word_count: 20),
     price: Faker::Commerce.price,
     old_price: Faker::Commerce.price,
@@ -96,7 +96,7 @@ product_attributes = [
   {
     brand_id: '3',
     title: 'Rubber flip-flops with new-season logo',
-    bytitle: 'PACIFIC_THNG_DIGITAL - 50428976',
+    bytitle: 'PACIFIC_THNG_DIGITAL-50428976',
     content: Faker::Lorem.sentence(word_count: 20),
     price: Faker::Commerce.price,
     old_price: Faker::Commerce.price,
