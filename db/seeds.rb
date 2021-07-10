@@ -256,7 +256,14 @@ sql = <<-EOL
   (6, 4), (6, 1), (6, 2),
   (7, 9), (7, 8), (7, 3),
   (8, 4), (8, 6), (8, 2),
-  (9, 4), (9, 1), (9, 2)
+  (9, 4), (9, 1), (9, 2);
+
+  INSERT INTO galleries
+  (id, product_id, img)
+  VALUES
+  (1, 2, 'p-2.jpg'),
+  (2, 2, 's-2.jpg'),
+  (3, 2, 's-3.jpg')
 EOL
 
 sql.split(';').each do |s|

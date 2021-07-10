@@ -5,6 +5,8 @@ class Product < ApplicationRecord
   has_many :related_products
   has_many :related, through: :related_products
 
+  has_many :galleries
+
   enum hit: { hit: 1, not_hit: 0 }
 
   def discount
