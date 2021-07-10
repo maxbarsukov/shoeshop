@@ -99,8 +99,7 @@
               </div>
               <ul class="tag-men">
                 <li><span>CATEGORY</span>
-                  <strong>: <a href="/category/<%= @product.category.bytitle %>" style="">
-                    <%= @product.category.title %></a>
+                  <strong>: <%= link_to @product.category.title, category_path(@product.category) %>
                   </strong>
                 </li>
               </ul>
