@@ -19,19 +19,19 @@
           <div class="col-md-5 single-top-left">
             <div class="flexslider">
               <ul class="slides">
-                <li data-thumb="<%= asset_path 'products/s-1.jpg' %>">
+                <li data-thumb="<%= asset_path @product.img %>">
                   <div class="thumb-image">
-                    <img src="<%= asset_path 'products/s-1.jpg' %>" data-imagezoom="true" class="img-responsive" alt="Product Image"/>
+                    <img src="<%= asset_path @product.img %>" data-imagezoom="true" class="img-responsive" alt="Product Image"/>
                   </div>
                 </li>
-                <li data-thumb="<%= asset_path 'products/s-2.jpg' %>">
+                <li data-thumb="<%= asset_path 's-2.jpg' %>">
                   <div class="thumb-image">
-                    <img src="<%= asset_path 'products/s-2.jpg' %>" data-imagezoom="true" class="img-responsive" alt="Product Image"/>
+                    <img src="<%= asset_path 's-2.jpg' %>" data-imagezoom="true" class="img-responsive" alt="Product Image"/>
                   </div>
                 </li>
-                <li data-thumb="<%= asset_path 'products/s-3.jpg' %>">
+                <li data-thumb="<%= asset_path 's-3.jpg' %>">
                   <div class="thumb-image">
-                    <img src="<%= asset_path 'products/s-3.jpg' %>" data-imagezoom="true" class="img-responsive" alt="Product Image"/>
+                    <img src="<%= asset_path 's-3.jpg' %>" data-imagezoom="true" class="img-responsive" alt="Product Image"/>
                   </div>
                 </li>
               </ul>
@@ -204,45 +204,44 @@
               <div class="clearfix"></div>
             </div>
           </div>
-        <%# end %>
+        <%# end %>-->
 
-        <%# if recent_products.any? %>
+        <% if recent_products.any? %>
           <div class="latestproducts">
             <div class="product-one">
               <h3>Recently Products</h3>
 
-              <%# recent_products.each do |recently| %>
+              <% recent_products.each do |recently| %>
                 <div class="col-md-4 product-left p-left">
                   <div class="product-main simpleCart_shelfItem">
-                    <%#= link_to product_path(recently), class: "mask" do %>
-                      <%#= image_tag recently.img, class: "img-responsive zoom-img" %>
-                    <%# end %>
+                    <%= link_to product_path(recently), class: "mask" do %>
+                      <%= image_tag recently.img, class: "img-responsive zoom-img" %>
+                    <% end %>
                     <div class="product-bottom">
-                      <h3><%#= link_to recently.title, product_path(recently) %></h3>
+                      <h3><%= link_to recently.title, product_path(recently) %></h3>
                       <p>Explore Now</p>
                       <h4>
-                        <a class="item_add add-to-cart-link" href="cart/add?if=<%#= recently.id %>" data-id="<%#= recently.id %>">
+                        <a class="item_add add-to-cart-link" href="cart/add?if=<%= recently.id %>" data-id="<%= recently.id %>">
                           <i></i>
                         </a>
-                        <span class="item_price">$ <%#= recently.price %></span>
-                        <%# if recently.old_price %>
-                          <del><%#= recently.old_price %></del>
-                        <%# end %>
+                        <span class="item_price">$ <%= recently.price %></span>
+                        <% if recently.old_price %>
+                          <del><%= recently.old_price %></del>
+                        <% end %>
                       </h4>
                     </div>
                     <div class="srch">
                       <span>
-                        - <%#= recently.discount %> %
+                        - <%= recently.discount %> %
                       </span>
                     </div>
                   </div>
                 </div>
-              <%# end %>
+              <% end %>
               <div class="clearfix"></div>
             </div>
           </div>
-        <%# end %>
-        -->
+        <% end %>
       </div>
 
       <div class="col-md-3 single-right">
