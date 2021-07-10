@@ -32,26 +32,26 @@ men = Category.create(title: 'Men', bytitle: 'men', keywords: 'men', description
 women = Category.create(title: 'Women', bytitle: 'women', keywords: 'women', description: 'for women')
 kids = Category.create(title: 'Kids', bytitle: 'kids', keywords: 'kids', description: 'for kids')
 
-sling = Category.create(title: 'Electronic', bytitle: 'electronic2', keywords: 'electronic', description: 'electronic', parent: women)
-sleepons = Category.create(title: 'Mechanical', bytitle: 'mechanical2', keywords: 'mechanical', description: 'mechanical', parent: women)
+sling = Category.create(title: 'Sling', bytitle: 'sling', keywords: 'sling', description: 'sling', parent: women)
+sleepons = Category.create(title: 'Sleepons', bytitle: 'sleepons', keywords: 'sleepons', description: 'sleepons', parent: women)
 
-flipflops = Category.create(title: 'Epos', bytitle: 'epos', keywords: 'epos', description: 'epos', parent: sleepons)
-highheels = Category.create(title: 'Seiko', bytitle: 'seiko', keywords: 'seiko', description: 'seiko', parent: sling)
+flipflops = Category.create(title: 'Flipflops', bytitle: 'flipflops', keywords: 'flipflops', description: 'flipflops', parent: sleepons)
+highheels = Category.create(title: 'Highheels', bytitle: 'highheels', keywords: 'highheels', description: 'highheels', parent: sling)
 
-loafers = Category.create(title: 'Electronic', bytitle: 'electronic1', keywords: 'electronic', description: 'electronic', parent: men)
-sneakers = Category.create(title: 'Mechanical', bytitle: 'mechanical1', keywords: 'mechanical', description: 'mechanical', parent: men)
-convers = Category.create(title: 'Casio', bytitle: 'casio', keywords: 'casio', description: 'casio', parent: sneakers)
+loafers = Category.create(title: 'Loafers', bytitle: 'loafers', keywords: 'loafers', description: 'loafers', parent: men)
+sneakers = Category.create(title: 'Sneakers', bytitle: 'sneakers', keywords: 'sneakers', description: 'sneakers', parent: men)
+convers = Category.create(title: 'Convers', bytitle: 'convers', keywords: 'convers', description: 'convers', parent: sneakers)
 
-derby = Category.create(title: 'Citizen', bytitle: 'citizen', keywords: 'citizen', description: 'citizen', parent: loafers)
-business = Category.create(title: 'Royal London', bytitle: 'royal-london', keywords: 'royal-london', description: 'royal-london', parent: loafers)
+derby = Category.create(title: 'Derby', bytitle: 'derby', keywords: 'derby', description: 'derby', parent: loafers)
+business = Category.create(title: 'Business', bytitle: 'business', keywords: 'business', description: 'business', parent: loafers)
 
-clogs = Category.create(title: 'Adriatica', bytitle: 'adriatica', keywords: 'adriatica', description: 'adriatica', parent: kids)
-crocs = Category.create(title: 'Anne Klein', bytitle: 'anne-klein', keywords: 'anne-klein', description: 'anne-klein', parent: kids)
+clogs = Category.create(title: 'Clogs', bytitle: 'clogs', keywords: 'clogs', description: 'clogs', parent: kids)
+crocs = Category.create(title: 'Crocs', bytitle: 'crocs', keywords: 'crocs', description: 'crocs', parent: kids)
 
 
 product_attributes = [
   {
-    category_id: '1',
+    category_id: '9',
     brand_id: '2',
     title: 'GUCCI Tennis',
     bytitle: '628717-H9H80-1162',
@@ -65,7 +65,7 @@ product_attributes = [
     hit: 1
   },
   {
-    category_id: '1',
+    category_id: '7',
     brand_id: '2',
     title: 'GUCCI sling',
     bytitle: '659471-BKO00-4514',
@@ -79,7 +79,7 @@ product_attributes = [
     hit: 1
   },
   {
-    category_id: '1',
+    category_id: '9',
     brand_id: '2',
     title: 'GUCCI Sneakers',
     bytitle: '663723-2SH00-9014',
@@ -93,7 +93,7 @@ product_attributes = [
     hit: 1
   },
   {
-    category_id: '1',
+    category_id: '10',
     brand_id: '3',
     title: 'HUGO BOSS trainers',
     bytitle: 'SATURN_LOWP_NYRS-50452024',
@@ -107,7 +107,7 @@ product_attributes = [
     hit: 1
   },
   {
-    category_id: '1',
+    category_id: '11',
     brand_id: '3',
     title: 'HUGO BOSS Derby',
     bytitle: 'KENSINGTON_DERB_BU-50385015',
@@ -121,7 +121,7 @@ product_attributes = [
     hit: 1
   },
   {
-    category_id: '1',
+    category_id: '6',
     brand_id: '3',
     title: 'HUGO BOSS Flip-flops',
     bytitle: 'PACIFIC_THNG_DIGITAL-50428976',
@@ -135,7 +135,7 @@ product_attributes = [
     hit: 1
   },
   {
-    category_id: '1',
+    category_id: '14',
     brand_id: '4',
     title: 'LACOSTE Croco',
     bytitle: '741CMA0007-042',
@@ -149,7 +149,7 @@ product_attributes = [
     hit: 1
   },
   {
-    category_id: '1',
+    category_id: '13',
     brand_id: '4',
     title: 'LACOSTE Suruga',
     bytitle: '739CFA0005-95K',
@@ -163,7 +163,7 @@ product_attributes = [
     hit: 0
   },
   {
-    category_id: '1',
+    category_id: '9',
     brand_id: '4',
     title: 'LACOSTE Sneakers',
     bytitle: '741SUC0013-J18',
@@ -177,7 +177,7 @@ product_attributes = [
     hit: 1
   },
   {
-    category_id: '1',
+    category_id: '8',
     brand_id: '5',
     title: 'PRADA Loafers',
     bytitle: '1D246M_055_F0002_F_B050',
@@ -191,7 +191,7 @@ product_attributes = [
     hit: 1
   },
   {
-    category_id: '1',
+    category_id: '4',
     brand_id: '5',
     title: 'PRADA Shoes',
     bytitle: '2EG312_B4L_F0D56',
@@ -205,7 +205,7 @@ product_attributes = [
     hit: 0
   },
   {
-    category_id: '1',
+    category_id: '5',
     brand_id: '5',
     title: 'PRADA Slip-ons',
     bytitle: '4D3488_71L_F0632',
@@ -219,7 +219,7 @@ product_attributes = [
     hit: 1
   },
   {
-    category_id: '1',
+    category_id: '8',
     brand_id: '1',
     title: 'ECCO Moccasins',
     bytitle: '370843-02001',
@@ -233,7 +233,7 @@ product_attributes = [
     hit: 0
   },
   {
-    category_id: '1',
+    category_id: '13',
     brand_id: '1',
     title: 'ECCO Clogs',
     bytitle: '291603-01001',
@@ -247,7 +247,7 @@ product_attributes = [
     hit: 1
   },
   {
-    category_id: '1',
+    category_id: '9',
     brand_id: '1',
     title: 'ECCO Sneakers',
     bytitle: '712642-01303',
@@ -261,7 +261,7 @@ product_attributes = [
     hit: 1
   },
   {
-    category_id: '1',
+    category_id: '10',
     brand_id: '1',
     title: 'ECCO CMA',
     bytitle: '880124-01007',
