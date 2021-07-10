@@ -1,0 +1,17 @@
+<div class="product-main simpleCart_shelfItem">
+  <%= link_to (image_tag product.img, class: "img-responsive zoom-img"), product_path(product), class: "mask" %>
+  <div class="product-bottom">
+    <h3><%= link_to product.title, product_path(product) %></h3>
+    <p>Explore Now</p>
+    <h4>
+      <a class="item_add add-to-cart-link" href="cart/add?if=<%= product.id %>" data-id="<%= product.id %>"><i></i></a>
+      <span class="item_price">$ <%= product.price %></span>
+      <% if product.old_price %>
+        <small><del><%= product.old_price %></del></small>
+      <% end %>
+    </h4>
+  </div>
+  <div class="srch">
+    <span>- <%= product.discount %> %</span>
+  </div>
+</div>

@@ -71,7 +71,7 @@
 
               <h5 class="item_price">$ <%= @product.price %> </h5>
               <% if @product.old_price %>
-                <del><%= @product.old_price %></del>
+                <small><del><%= @product.old_price %></del></small>
               <% end %>
               <p><%= @product.content %></p>
               <div class="available">
@@ -99,8 +99,8 @@
               </div>
               <ul class="tag-men">
                 <li><span>CATEGORY</span>
-                  <strong>: <a href="/category/<%#= @product.category.bytitle %>" style="">
-                    <%#= @product.category.title %></a>
+                  <strong>: <a href="/category/<%= @product.category.bytitle %>" style="">
+                    <%= @product.category.title %></a>
                   </strong>
                 </li>
               </ul>
@@ -191,29 +191,7 @@
               <h3>Related Products</h3>
               <% @product.related.each do |related| %>
                 <div class="col-md-4 product-left p-left">
-                  <div class="product-main simpleCart_shelfItem">
-                    <%= link_to product_path(related), class: "mask" do %>
-                      <%= image_tag related.img, class: "img-responsive zoom-img" %>
-                    <% end %>
-                    <div class="product-bottom">
-                      <h3><%= link_to related.title, product_path(related) %></h3>
-                      <p>Explore Now</p>
-                      <h4>
-                        <a class="item_add add-to-cart-link" href="cart/add?if=<%= related.id %>" data-id="<%= related.id %>">
-                          <i></i>
-                        </a>
-                        <span class="item_price">$ <%= related.price %></span>
-                        <% if related.old_price %>
-                          <del><%= related.old_price %></del>
-                        <% end %>
-                      </h4>
-                    </div>
-                    <div class="srch">
-                      <span>
-                        - <%= related.discount %> %
-                      </span>
-                    </div>
-                  </div>
+                  <%= render 'include/product/product', product: related %>
                 </div>
               <% end %>
               <div class="clearfix"></div>
@@ -228,29 +206,7 @@
 
               <% recent_products.each do |recently| %>
                 <div class="col-md-4 product-left p-left">
-                  <div class="product-main simpleCart_shelfItem">
-                    <%= link_to product_path(recently), class: "mask" do %>
-                      <%= image_tag recently.img, class: "img-responsive zoom-img" %>
-                    <% end %>
-                    <div class="product-bottom">
-                      <h3><%= link_to recently.title, product_path(recently) %></h3>
-                      <p>Explore Now</p>
-                      <h4>
-                        <a class="item_add add-to-cart-link" href="cart/add?if=<%= recently.id %>" data-id="<%= recently.id %>">
-                          <i></i>
-                        </a>
-                        <span class="item_price">$ <%= recently.price %></span>
-                        <% if recently.old_price %>
-                          <del><%= recently.old_price %></del>
-                        <% end %>
-                      </h4>
-                    </div>
-                    <div class="srch">
-                      <span>
-                        - <%= recently.discount %> %
-                      </span>
-                    </div>
-                  </div>
+                  <%= render 'include/product/product', product: recently %>
                 </div>
               <% end %>
               <div class="clearfix"></div>
@@ -278,10 +234,9 @@
             <h4>Brand</h4>
             <div class="row1 row2 scroll-pane">
               <div class="col col-4">
-                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>kurtas</label>
+                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Ecco</label>
               </div>
               <div class="col col-4">
-                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Ecco</label>
                 <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Gucci</label>
                 <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Hugo Boss</label>
                 <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Lacoste</label>
