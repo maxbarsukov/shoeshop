@@ -1,0 +1,12 @@
+<% category.children.each do |sub| %>
+  <% cache sub do %>
+    <h4>
+      <%= link_to sub.title, category_path(sub) %>
+    </h4>
+    <ul>
+      <li>
+        <%= render 'include/menu/menu', category: sub, cached: true %>
+      </li>
+    </ul>
+  <% end %>
+<% end %>

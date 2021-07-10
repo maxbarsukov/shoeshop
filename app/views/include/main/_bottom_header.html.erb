@@ -5,6 +5,23 @@
         <ul class="memenu skyblue">
           <li class="active"><a href="/">Home</a></li>
 
+          <% Category.roots.each do |category| %>
+            <% cache category do %>
+              <li class="grid">
+                <%= link_to category.title, category_path(category) %>
+                <% if category.children.present? %>
+                  <div class="mepanel">
+                    <div class="row">
+                      <div class="fcol1 me-one">
+                        <%= render 'include/menu/menu', category: category, cached: true %>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </li>
+            <% end %>
+          <% end %>
+
         </ul>
       </div>
       <div class="clearfix"></div>
