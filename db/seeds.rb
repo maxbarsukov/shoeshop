@@ -241,3 +241,24 @@ product_attributes = [
 product_attributes.each do |attr|
   Product.create(attr) unless Product.where(attr).first
 end
+
+connection = ActiveRecord::Base.connection()
+
+sql = <<-EOL
+  INSERT INTO related_products
+  (product_id, related_id)
+  VALUES
+  (1, 9), (1, 8), (1, 7),
+  (2, 6), (2, 5), (2, 4),
+  (3, 1), (3, 2), (3, 4),
+  (4, 1), (4, 2), (4, 3),
+  (5, 3), (5, 8), (5, 7),
+  (6, 4), (6, 1), (6, 2),
+  (7, 9), (7, 8), (7, 3),
+  (8, 4), (8, 6), (8, 2),
+  (9, 4), (9, 1), (9, 2)
+EOL
+
+sql.split(';').each do |s|
+  connection.execute(s.strip) unless s.strip.empty?
+end
