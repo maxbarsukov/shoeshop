@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :related_product do
+  factory :gallery do
     
   end
 end
