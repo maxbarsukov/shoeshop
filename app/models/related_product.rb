@@ -1,0 +1,2 @@
+class RelatedProduct < ApplicationRecord
+end
