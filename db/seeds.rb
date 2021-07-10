@@ -261,7 +261,7 @@ sql = <<-EOL
   INSERT INTO galleries
   (id, product_id, img)
   VALUES
-  (1, 2, 'p-2.jpg'),
+  (1, 2, 'p-2.png'),
   (2, 2, 's-2.jpg'),
   (3, 2, 's-3.jpg')
 EOL

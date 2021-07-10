@@ -17,25 +17,39 @@
       <div class="col-md-9 single-main-left">
         <div class="sngl-top">
           <div class="col-md-5 single-top-left">
-            <div class="flexslider">
-              <ul class="slides">
-                <li data-thumb="<%= asset_path @product.img %>">
-                  <div class="thumb-image">
-                    <img src="<%= asset_path @product.img %>" data-imagezoom="true" class="img-responsive" alt="Product Image"/>
-                  </div>
-                </li>
-                <li data-thumb="<%= asset_path 's-2.jpg' %>">
-                  <div class="thumb-image">
-                    <img src="<%= asset_path 's-2.jpg' %>" data-imagezoom="true" class="img-responsive" alt="Product Image"/>
-                  </div>
-                </li>
-                <li data-thumb="<%= asset_path 's-3.jpg' %>">
-                  <div class="thumb-image">
-                    <img src="<%= asset_path 's-3.jpg' %>" data-imagezoom="true" class="img-responsive" alt="Product Image"/>
-                  </div>
-                </li>
-              </ul>
-            </div>
+            <% if @product.galleries.present? %>
+              <div class="flexslider">
+                <ul class="slides">
+                  <% @product.galleries.each do |item| %>
+                    <li data-thumb="<%= asset_path item.img %>">
+                      <div class="thumb-image">
+                        <img src="<%= asset_path item.img %>" data-imagezoom="true" class="img-responsive" alt="Product Image"/>
+                      </div>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            <% else %>
+              <div class="flexslider">
+                <ul class="slides">
+                  <li data-thumb="<%= asset_path @product.img %>">
+                    <div class="thumb-image">
+                      <img src="<%= asset_path @product.img %>" data-imagezoom="true" class="img-responsive" alt="Product Image"/>
+                    </div>
+                  </li>
+                  <li data-thumb="<%= asset_path 's-2.jpg' %>">
+                    <div class="thumb-image">
+                      <img src="<%= asset_path 's-2.jpg' %>" data-imagezoom="true" class="img-responsive" alt="Product Image"/>
+                    </div>
+                  </li>
+                  <li data-thumb="<%= asset_path 's-3.jpg' %>">
+                    <div class="thumb-image">
+                      <img src="<%= asset_path 's-3.jpg' %>" data-imagezoom="true" class="img-responsive" alt="Product Image"/>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            <% end %>
           </div>
           <div class="col-md-7 single-top-right">
             <div class="single-para simpleCart_shelfItem">
