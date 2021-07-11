@@ -10,6 +10,7 @@ class Product < ApplicationRecord
   has_many :galleries
 
   enum hit: { hit: 1, not_hit: 0 }
+  scope :active, -> { where(status: 1) }
 
   def discount
     (100 - (price * 100 / old_price)).round
