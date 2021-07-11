@@ -17,7 +17,7 @@ RSpec.describe SearchController, type: :controller do
       end
 
       it 'response with 200 ok' do
-        expect(response.code).to eq(200)
+        expect(response.code).to eq('200')
       end
     end
 
