@@ -31,7 +31,9 @@
                   </li>
                 <% end %>
                 <li>
-                  Welcome, <%= current_user.email %>
+                  <a>
+                    Welcome, <%= current_user.email %>
+                  </a>
                 </li>
                 <li>
                   <%= link_to 'Edit', edit_user_registration_path %>
