@@ -18,6 +18,9 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
+# Authentication solution
+gem 'devise', '~> 4.8'
+
 # Search Engine Optimization (SEO) plugin for Ruby on Rails applications
 gem 'meta-tags', '~> 2.14'
 # Simple Ruby on Rails plugin for creating and managing a breadcrumb navigation
