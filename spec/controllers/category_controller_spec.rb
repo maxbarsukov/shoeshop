@@ -16,7 +16,9 @@ RSpec.describe CategoryController, type: :controller do
         is_expected.to render_template :show
       end
       it 'product data in response' do
-        expect(response.body).to include(products.first.title)
+        is_expected.to render_template :show
+        expect(response.body).to include(products.first.title,
+                                         products.second.title)
       end
     end
   end
