@@ -21,7 +21,32 @@
           <div class="btn-group">
             <a class="dropdown-toggle" data-toggle="dropdown">Account <span class="caret"></span></a>
             <ul class="dropdown-menu">
-
+              <% if user_signed_in? %>
+                <% if current_user.try(:admin?) %>
+                  <li>
+                    <%= link_to 'Administrator', '#', style: "color: red;" %>
+                  </li>
+                  <li>
+                    <%= link_to 'API', '/oauth/applications', style: "color: blue;" %>
+                  </li>
+                <% end %>
+                <li>
+                  Welcome, <%= current_user.email %>
+                </li>
+                <li>
+                  <%= link_to 'Edit', edit_user_registration_path %>
+                </li>
+                <li>
+                  <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+                </li>
+              <% else %>
+                <li>
+                  <%= link_to 'Sign In', new_user_session_path %>
+                </li>
+                <li>
+                  <%= link_to 'Sign Up', new_user_registration_path %>
+                </li>
+              <% end %>
             </ul>
           </div>
           <div class="clearfix"></div>
