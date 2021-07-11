@@ -20,6 +20,8 @@ gem 'uglifier', '>= 1.3.0'
 
 # Authentication solution
 gem 'devise', '~> 4.8'
+# Forms made easy for Rails
+gem 'simple_form', '~> 5.1'
 
 # Search Engine Optimization (SEO) plugin for Ruby on Rails applications
 gem 'meta-tags', '~> 2.14'
