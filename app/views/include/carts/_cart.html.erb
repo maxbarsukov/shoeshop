@@ -18,7 +18,7 @@
               <% if item.product.img.nil? %>
                 <%= link_to item.product.title, product_path(item) %>
               <% else %>
-                <%= link_to image_tag(item.product.img), product_path(item) %>
+                <%= link_to image_tag('products/' + item.product.img), product_path(item) %>
             <% end %>
             </td>
             <td><%= link_to item.product.title, product_path(item) %></td>

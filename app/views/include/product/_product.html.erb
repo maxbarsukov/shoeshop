@@ -1,5 +1,5 @@
 <div class="product-main simpleCart_shelfItem">
-  <%= link_to (image_tag product.img, class: "img-responsive zoom-img"), product_path(product), class: "mask" %>
+  <%= link_to (image_tag 'products/' + product.img, class: "img-responsive zoom-img"), product_path(product), class: "mask" %>
   <div class="product-bottom">
     <h3><%= link_to product.title, product_path(product) %></h3>
     <p>Explore Now</p>

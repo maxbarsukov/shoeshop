@@ -21,9 +21,9 @@
               <div class="flexslider">
                 <ul class="slides">
                   <% @product.galleries.each do |item| %>
-                    <li data-thumb="<%= asset_path item.img %>">
+                    <li data-thumb="<%= asset_path 'products/' + item.img %>">
                       <div class="thumb-image">
-                        <img src="<%= asset_path item.img %>" data-imagezoom="true" class="img-responsive" alt="Product Image"/>
+                        <img src="<%= asset_path 'products/' + item.img %>" data-imagezoom="true" class="img-responsive" alt="Product Image"/>
                       </div>
                     </li>
                   <% end %>
@@ -32,19 +32,19 @@
             <% else %>
               <div class="flexslider">
                 <ul class="slides">
-                  <li data-thumb="<%= asset_path @product.img %>">
+                  <li data-thumb="<%= asset_path 'products/' + @product.img %>">
                     <div class="thumb-image">
-                      <img src="<%= asset_path @product.img %>" data-imagezoom="true" class="img-responsive" alt="Product Image"/>
+                      <img src="<%= asset_path 'products/' + @product.img %>" data-imagezoom="true" class="img-responsive" alt="Product Image"/>
                     </div>
                   </li>
-                  <li data-thumb="<%= asset_path 's-2.jpg' %>">
+                  <li data-thumb="<%= asset_path 'products/s-2.jpg' %>">
                     <div class="thumb-image">
-                      <img src="<%= asset_path 's-2.jpg' %>" data-imagezoom="true" class="img-responsive" alt="Product Image"/>
+                      <img src="<%= asset_path 'products/s-2.jpg' %>" data-imagezoom="true" class="img-responsive" alt="Product Image"/>
                     </div>
                   </li>
-                  <li data-thumb="<%= asset_path 's-3.jpg' %>">
+                  <li data-thumb="<%= asset_path 'products/s-3.jpg' %>">
                     <div class="thumb-image">
-                      <img src="<%= asset_path 's-3.jpg' %>" data-imagezoom="true" class="img-responsive" alt="Product Image"/>
+                      <img src="<%= asset_path 'products/s-3.jpg' %>" data-imagezoom="true" class="img-responsive" alt="Product Image"/>
                     </div>
                   </li>
                 </ul>
