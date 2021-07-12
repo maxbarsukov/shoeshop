@@ -1,0 +1,54 @@
+<% if current_user %>
+  <% if products.present? %>
+    <div class="table-responsive">
+      <table class="table table-hover table-striped">
+        <thead>
+        <tr>
+          <th>Image</th>
+          <th>Title</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></th>
+        </tr>
+        </thead>
+        <tbody>
+        <% products.each do |item| %>
+          <tr>
+            <td>
+              <% if item.product.img.nil? %>
+                <%= link_to item.product.title, product_path(item) %>
+              <% else %>
+                <%= link_to image_tag(item.product.img), product_path(item) %>
+            <% end %>
+            </td>
+            <td><%= link_to item.product.title, product_path(item) %></td>
+            <td>
+              <%= item.quantity %> pieces
+            </td>
+            <td><%= item.product.price %></td>
+            <td>
+              <span data-id="<%= item.product_id %>" class="glyphicon glyphicon-remove text-danger del-item" aria-hidden="true"></span>
+            </td>
+          </tr>
+        <% end %>
+        <tr>
+          <td>Total:</td>
+          <td colspan="4" class="text-right cart-qty"><%= current_cart.total_quantity %> pieces</td>
+        </tr>
+        <tr>
+          <td>Total Price:</td>
+          <td colspan="4" class="text-right cart-sum"><%= format('%.2f', current_cart.total_price) %> $</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  <% else %>
+    <h3>Cart is Empty</h3>
+  <% end %>
+<% else %>
+  <span>Please Sign In to view the Cart</span>
+  <script type="text/javascript" charset="utf-8">
+    $('#cart .modal-footer a, #cart .modal-footer .btn-danger')
+        .css('display: none;');
+  </script>
+<% end %>

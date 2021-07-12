@@ -65,8 +65,9 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Cart</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"></span></button>
       </div>
       <div class="modal-body">
 
@@ -74,7 +75,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-default-outline" data-dismiss="modal">Continue shopping</button>
         <a href="cart/index" type="button" class="btn btn-primary">Place an order</a>
-        <button type="button" class="btn btn-danger" onclick="clearCart(); return false;">Empty the cart</button>
+        <button type="button" class="btn btn-danger" onclick="clearCart()">Empty the cart</button>
       </div>
     </div>
   </div>
