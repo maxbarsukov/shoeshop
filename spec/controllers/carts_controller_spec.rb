@@ -8,7 +8,7 @@ RSpec.describe CartsController, type: :controller do
   let!(:user) { create :user }
   let(:product) { create :product }
   let(:cart) { create :cart, user: user }
-  let!(:item) { create :cart_item, cart: cart, product: product }
+  let!(:items) { create :cart_item, cart: cart, product: product }
 
   describe 'GET #show' do
     subject { get :show }
