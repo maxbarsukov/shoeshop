@@ -106,6 +106,13 @@
               <div class="quantity">
                 <input type="number" size="4" value="1" name="quantity" min="1" step="1">
               </div>
+              <%= link_to 'ADD TO CART',
+                          cart_items_path,
+                          remote: true,
+                          data: { method: :post, id: @product.id },
+                          class: "add-cart item_add add-to-cart-link",
+                          id: "productAdd"
+              %>
             </div>
           </div>
           <div class="clearfix"> </div>
