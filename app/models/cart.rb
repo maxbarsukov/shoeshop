@@ -11,7 +11,7 @@ class Cart < ApplicationRecord
   end
 
   def total_quantity
-    cart_items.map(&:quantity).sum
+    cart_items.sum(&:quantity)
   end
 
   def total_price
