@@ -21,7 +21,7 @@
                 <%= link_to image_tag('products/' + item.product.img), product_path(item) %>
             <% end %>
             </td>
-            <td><%= link_to item.product.title, product_path(item) %></td>
+            <td><%= link_to item.product.title, product_path(item.product) %></td>
             <td>
               <%= item.quantity %> pieces
             </td>
@@ -47,8 +47,4 @@
   <% end %>
 <% else %>
   <span>Please Sign In to view the Cart</span>
-  <script type="text/javascript" charset="utf-8">
-    $('#cart .modal-footer a, #cart .modal-footer .btn-danger')
-        .css('display: none;');
-  </script>
 <% end %>
