@@ -6,6 +6,10 @@ class Cart < ApplicationRecord
 
   validates :user_id, presence: true
 
+  def empty?
+    cart_items.none?
+  end
+
   def total_quantity
     cart_items.map(&:quantity).sum
   end
