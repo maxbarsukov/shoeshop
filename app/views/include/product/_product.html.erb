@@ -4,7 +4,7 @@
     <h3><%= link_to product.title, product_path(product) %></h3>
     <p>Explore Now</p>
     <h4>
-      <a class="item_add add-to-cart-link" href="cart/add?if=<%= product.id %>" data-id="<%= product.id %>"><i></i></a>
+      <a class="item_add add-to-cart-link" href="cart/add?id=<%= product.id %>" data-id="<%= product.id %>"><i></i></a>
       <span class="item_price">$ <%= product.price %></span>
       <% if product.old_price %>
         <small><del><%= product.old_price %></del></small>

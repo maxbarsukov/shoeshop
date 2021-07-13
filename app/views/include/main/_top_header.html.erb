@@ -19,8 +19,8 @@
             </select>
           </div>
           <div class="btn-group">
-            <a class="dropdown-toggle" data-toggle="dropdown">Account <span class="caret"></span></a>
-            <ul class="dropdown-menu">
+            <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Account <span class="caret"></span></a>
+            <ul class="dropdown-menu" id="account-dropdown">
               <% if user_signed_in? %>
                 <% if current_user.try(:admin?) %>
                   <li>
@@ -29,12 +29,14 @@
                   <li>
                     <%= link_to 'API', '/oauth/applications', style: "color: blue;" %>
                   </li>
+                  <li class="dropdown-divider"></li>
                 <% end %>
                 <li>
                   <a>
                     Welcome, <%= current_user.email %>
                   </a>
                 </li>
+                <li class="dropdown-divider"></li>
                 <li>
                   <%= link_to 'Edit', edit_user_registration_path %>
                 </li>
@@ -60,11 +62,11 @@
           <a href="/cart" onclick="getCart(); return false;">
             <div class="total">
               <%= image_tag 'cart-1.png', alt: 'Cart' %>
-              <span class="simpleCart_total">
-                <% if cart_items.any? %>
-                  <%= format('%.2f', current_cart.total_price) %> $
-                <% else %>
+              <span class="simpleCart1_total">
+                <% if current_cart.empty? %>
                   Empty Cart
+                <% else %>
+                  <%= format('%.2f', current_cart.total_price) %> $
                 <% end %>
               </span>
             </div>
