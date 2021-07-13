@@ -2,10 +2,13 @@ $(document).on("turbolinks:load", function() {
     $.ajaxSetup({
         headers: {
             'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+        },
+        beforeSend: function(xhr) { xhr.setRequestHeader('X-CSRF-Token',
+            $('meta[name="csrf-token"]').attr('content'))
         }
     });
 
-    function showCart(cart) {
+    window.showCart = function showCart(cart) {
         if($.trim(cart) == '<td>Cart is Empty</td>') {
             $('#cart .modal-footer a, #cart .modal-footer .btn-danger').css('display', 'none');
         } else {
@@ -20,7 +23,7 @@ $(document).on("turbolinks:load", function() {
         }
     }
 
-    function getCart() {
+    window.getCart = function getCart() {
         $.ajax({
             url: '/cart',
             type: 'GET',
@@ -34,14 +37,14 @@ $(document).on("turbolinks:load", function() {
         });
     }
 
-    function showCartEmpty() {
+    window.showCartEmpty = function showCartEmpty() {
         var result = { error: 'Please Sign In to view the Cart' };
         var modal = $('#cart').modal();
         $('#cart .modal-footer a, #cart .modal-footer .btn-danger').css('display', 'none');
         modal.find('.modal-body').html(result.error);
     }
 
-    function clearCart() {
+    window.clearCart = function clearCart() {
         $.ajax({
             url: '/cart/',
             method: 'delete',
@@ -84,6 +87,9 @@ $(document).on("turbolinks:load", function() {
         });
     });
 
+    $('#cart .modal-footer a, #cart .modal-footer .btn-danger')
+        .css('display: none;');
+
     $('#cart .modal-body').on('click', '.del-item', function() {
         var id  = $(this).data('id')
 
@@ -102,5 +108,9 @@ $(document).on("turbolinks:load", function() {
                 console.log(err);
             }
         });
+    });
+
+    $('.dropdown-menu').click(function(e){
+        $(this).nextAll('ul').slideToggle();
     });
 });
