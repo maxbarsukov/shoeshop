@@ -62,11 +62,11 @@ $(document).on("turbolinks:load", function() {
     $('body').on('click', '.add-to-cart-link', function(e) {
         e.preventDefault();
         var product_id  = $(this).data('id'),
-            quantity    = $('.quantity input').val() ? $('.quantity input').val() : 1,
+            quantity    = $('.quantity input').val() ? +$('.quantity input').val() : 1,
             mod         = $('.available select').val(),
-            access      = $('#cart_access').val();
+            access      = +$('#cart_access').val();
 
-        if (access == 99) {
+        if (access === 99) {
             showCartEmpty();
             return false;
         }
