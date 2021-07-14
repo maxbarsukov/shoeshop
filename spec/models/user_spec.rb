@@ -55,7 +55,7 @@ RSpec.describe User, type: :model do
         let(:email) { 'wrong@email.email' }
 
         it 'creates new user' do
-          expect(User.find_for_oauth(auth))
+          expect { User.find_for_oauth(auth) }
             .to change(User, :count).by(1)
         end
 
@@ -70,7 +70,7 @@ RSpec.describe User, type: :model do
 
         it 'creates authorization for user' do
           user = User.find_for_oauth(auth)
-          expect(user.authorization).to_not be_empty
+          expect(user.authorizations).to_not be_empty
         end
 
         it 'creates authorization with provider and uid' do

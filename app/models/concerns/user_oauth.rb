@@ -19,12 +19,13 @@ module UserOauth
       email ||= create_email(auth) if email.nil?
 
       unless user
-        password = Devise.friendly_token [0, 20]
-        user = user.create!(email: email,
+        password = Devise.friendly_token[0, 20]
+        user = User.create!(email: email,
                             password: password,
                             password_confirmation: password)
       end
       user.create_authorization(auth)
+      user
     end
 
     def create_email(auth)
