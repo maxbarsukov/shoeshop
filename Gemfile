@@ -24,6 +24,7 @@ gem 'devise', '~> 4.8'
 # A generalized Rack framework for multiple-provider authentication
 gem 'omniauth', '~> 2.0', '>= 2.0.4'
 gem 'omniauth-facebook', '~> 8.0'
+gem "omniauth-rails_csrf_protection", '~> 1.0'
 
 # Forms made easy for Rails
 gem 'simple_form', '~> 5.1'
