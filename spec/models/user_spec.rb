@@ -16,8 +16,8 @@ RSpec.describe User, type: :model do
 
     context 'user already has auth' do
       it 'returns the user' do
-        user.authorization.create(create_params)
-        expect(User.find_for_auth(auth)).to eq(user)
+        user.authorizations.create(create_params)
+        expect(User.find_for_oauth(auth)).to eq(user)
       end
     end
   end
