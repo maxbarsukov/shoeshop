@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  include UserOauth
+
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
