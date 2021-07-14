@@ -6,7 +6,8 @@ RSpec.describe User, type: :model do
   it { should validate_presence_of(:email) }
   it { should validate_presence_of(:password) }
 
-  it { should has_one(:cart) }
+  it { should have_one(:cart) }
+  it { should have_many(:authorizations) }
 
   describe '.find_for_auth' do
     let!(:user) { create(:user) }
