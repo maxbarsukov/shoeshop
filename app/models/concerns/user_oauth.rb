@@ -7,11 +7,11 @@ module UserOauth
 
   class_methods do
     def find_for_oauth(auth)
-      authorizations = Authorization
-                       .where(provider: auth.provider, uid: auth.uid)
-                       .first
+      authorization = Authorization
+                      .where(provider: auth.provider, uid: auth.uid)
+                      .first
 
-      return authorizations.user if authorizations
+      return authorization.user if authorization
 
       email = auth.info[:email]
       user = User.where(email: email).first
