@@ -20,6 +20,11 @@ gem 'uglifier', '>= 1.3.0'
 
 # Authentication solution
 gem 'devise', '~> 4.8'
+
+# A generalized Rack framework for multiple-provider authentication
+gem 'omniauth', '~> 2.0', '>= 2.0.4'
+gem 'omniauth-facebook', '~> 8.0'
+
 # Forms made easy for Rails
 gem 'simple_form', '~> 5.1'
 
