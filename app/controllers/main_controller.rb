@@ -6,6 +6,8 @@ class MainController < ApplicationController
     @hits   = Product.hit.limit(8)
   end
 
+  private
+
   def set_page_options
     @page_title = 'Shoe Store'
     @page_description = 'The Best Fake Shoe Store That Ever Existed'

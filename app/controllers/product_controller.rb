@@ -13,11 +13,6 @@ class ProductController < ApplicationController
     Product.where(id: recently)
   end
 
-  def set_page_options
-    set_meta_tags @product.slice(:title, :description, :keywords)
-    add_breadcrumb 'Home', :root_path, title: 'Home'
-  end
-
   private
 
   def set_product
@@ -34,5 +29,10 @@ class ProductController < ApplicationController
       ([@product.id] + session[:viewed_products])
         .uniq
         .take(3)
+  end
+
+  def set_page_options
+    set_meta_tags @product.slice(:title, :description, :keywords)
+    add_breadcrumb 'Home', :root_path, title: 'Home'
   end
 end
