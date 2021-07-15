@@ -24,6 +24,18 @@ describe 'Products API' do
       it 'returns list of products' do
         expect(response.body).to have_json_size(2)
       end
+
+      %w[id title bytitle content price old_price description].each do |attr|
+        it "product contains #{attr}" do
+          expect(response.body).to be_json_eql(product.send(attr.to_sym).to_json)
+            .at_path("0/#{attr}")
+        end
+      end
+
+      it 'product object contains short_title' do
+        expect(response.body).to be_json_eql(product.title.truncate(8).to_json)
+          .at_path('0/short_title')
+      end
     end
   end
 end
