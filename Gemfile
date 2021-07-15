@@ -98,8 +98,6 @@ group :development, :test do
   gem 'rb-readline', '~> 0.5.5'
   # Set of matchers and helpers for testing API
   gem 'rspec-json_expectations', '~> 2.2'
-  # Help to kill N+1 queries and unused eager loading
-  gem 'bullet', '~> 6.1', '>= 6.1.4'
   # Testing framework
   gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -108,10 +106,21 @@ end
 
 group :development do
   # Auto annotations
-  gem 'annotate', '~> 3.1', '>= 3.1.1'
+  gem 'annotate', '~> 3.1', '>= 3.1.1',  require: false
+  # Help to kill N+1 queries and unused eager loading
+  gem 'bullet', '~> 6.1', '>= 6.1.4'
+  # Test coverage
+  gem 'coveralls', require: false
+  # Code metric tool for rails codes
+  gem 'rails_best_practices', '~> 1.21', require: false
+  # Helps to keep the database in a good shape
+  gem 'active_record_doctor', '~> 1.8',  require: false
+  # Code quality reporter
+  gem 'rubycritic', require: false
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
