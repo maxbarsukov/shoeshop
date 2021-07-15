@@ -5,6 +5,7 @@ class ProductController < ApplicationController
   after_action :register_visit, only: [:show]
 
   def show
+    authorize @product
     set_page_options
   end
 
