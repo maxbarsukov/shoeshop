@@ -14,6 +14,8 @@ Doorkeeper.configure do
   authorization_code_expires_in 2.hours
   access_token_expires_in       2.hours
 
+  default_scopes :public
+  optional_scopes :write, :update
 
   # If you didn't skip applications controller from Doorkeeper routes in your application routes.rb
   # file then you need to declare this block in order to restrict access to the web interface for
