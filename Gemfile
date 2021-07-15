@@ -22,6 +22,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'devise', '~> 4.8'
 # Object oriented authorization for Rails applications
 gem 'pundit', '~> 2.1'
+# Doorkeeper is an OAuth 2 provider for Rails
+gem 'doorkeeper', '~> 5.5', '>= 5.5.2'
 
 # A generalized Rack framework for multiple-provider authentication
 gem 'omniauth', '~> 2.0', '>= 2.0.4'

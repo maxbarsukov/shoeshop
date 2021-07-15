@@ -96,6 +96,8 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.4.4)
+    doorkeeper (5.5.2)
+      railties (>= 5)
     erubi (1.10.0)
     execjs (2.8.1)
     factory_bot (6.2.0)
@@ -362,6 +364,7 @@ DEPENDENCIES
   database_cleaner (~> 2.0, >= 2.0.1)
   db-query-matchers (~> 0.10.0)
   devise (~> 4.8)
+  doorkeeper (~> 5.5, >= 5.5.2)
   factory_bot (~> 6.2)
   factory_bot_rails (~> 6.2)
   faker (~> 2.18)
