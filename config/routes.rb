@@ -4,6 +4,12 @@ Rails.application.routes.draw do
   use_doorkeeper
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
+  namespace :api do
+    namespace :v1 do
+      resources :profile, only: [:index]
+    end
+  end
+
   resources :product,   only: [:show]
   resources :category,  only: [:show]
   resources :search,    only: [:index]
