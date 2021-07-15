@@ -20,6 +20,8 @@ gem 'uglifier', '>= 1.3.0'
 
 # Authentication solution
 gem 'devise', '~> 4.8'
+# Object oriented authorization for Rails applications
+gem 'pundit', '~> 2.1'
 
 # A generalized Rack framework for multiple-provider authentication
 gem 'omniauth', '~> 2.0', '>= 2.0.4'

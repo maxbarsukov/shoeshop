@@ -154,12 +154,16 @@ GEM
       actionpack (>= 3.2.0, < 6.2)
     method_source (1.0.0)
     mini_mime (1.1.0)
+    mini_portile2 (2.5.3)
     minitest (5.14.4)
     msgpack (1.4.2)
     multi_json (1.15.0)
     multi_xml (0.6.0)
     multipart-post (2.1.1)
     nio4r (2.5.7)
+    nokogiri (1.11.7)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
     nokogiri (1.11.7-x86_64-linux)
       racc (~> 1.4)
     oauth2 (1.4.7)
@@ -192,6 +196,8 @@ GEM
       method_source (~> 1.0)
     public_suffix (4.0.6)
     puma (3.12.6)
+    pundit (2.1.0)
+      activesupport (>= 3.0.0)
     racc (1.5.2)
     rack (2.2.3)
     rack-protection (2.1.0)
@@ -341,6 +347,7 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
+  ruby
   x86_64-linux
 
 DEPENDENCIES
@@ -372,6 +379,7 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   pry (~> 0.14.1)
   puma (~> 3.11)
+  pundit (~> 2.1)
   rails (~> 5.2.3)
   rails-controller-testing (~> 1.0, >= 1.0.5)
   rb-readline (~> 0.5.5)
@@ -395,4 +403,4 @@ RUBY VERSION
    ruby 2.7.2p137
 
 BUNDLED WITH
-   2.2.16
+   2.1.4
