@@ -1,5 +1,16 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: cart_items
+#
+#  id         :bigint           not null, primary key
+#  cart_id    :integer
+#  product_id :integer
+#  quantity   :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 require 'rails_helper'
 
 RSpec.describe CartItem, type: :model do
