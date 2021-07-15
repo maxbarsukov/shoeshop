@@ -4,6 +4,7 @@
     <div class="breadcrumbs-main">
       <ol class="breadcrumb">
         <li><a href="/"><%= render_breadcrumbs %></a></li>
+        <li class="active"><%= link_to @product.category.title, category_path(@product.category) %></li>
         <li class="active"><%= @product.title %></li>
       </ol>
     </div>
