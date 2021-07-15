@@ -67,6 +67,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # Allows you to generate your JSON in an object-oriented and convention-driven manner
 gem 'active_model_serializers', '~> 0.10.12'
+# Use ENV vars in Rails
+gem 'figaro', '~> 1.1', '>= 1.1.1'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
@@ -96,6 +98,8 @@ group :development, :test do
   gem 'rb-readline', '~> 0.5.5'
   # Set of matchers and helpers for testing API
   gem 'rspec-json_expectations', '~> 2.2'
+  # Help to kill N+1 queries and unused eager loading
+  gem 'bullet', '~> 6.1', '>= 6.1.4'
   # Testing framework
   gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
