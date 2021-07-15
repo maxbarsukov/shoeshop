@@ -8,6 +8,8 @@ class ProductSerializer < ActiveModel::Serializer
              :old_price,
              :description
 
+  belongs_to :category
+
   def short_title
     object.title.truncate(8)
   end

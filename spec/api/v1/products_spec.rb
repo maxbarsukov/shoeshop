@@ -36,6 +36,19 @@ describe 'Products API' do
         expect(response.body).to be_json_eql(product.title.truncate(8).to_json)
           .at_path('0/short_title')
       end
+
+      context 'category' do
+        it 'included in product object' do
+          expect(response.body).to have_json_size(8).at_path('0/category')
+        end
+
+        %w[title bytitle].each do |attr|
+          it "contains #{attr}" do
+            expect(response.body).to be_json_eql(category.send(attr.to_sym).to_json)
+              .at_path("0/category/#{attr}")
+          end
+        end
+      end
     end
   end
 end
