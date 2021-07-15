@@ -10,4 +10,8 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_cart, :cart_items
+
+  rescue_from Pundit::NotAuthorizedError do
+    redirect_to root_path, alert: 'Log in or Sign Up to view this content'
+  end
 end
