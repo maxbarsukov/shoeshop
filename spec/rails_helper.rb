@@ -10,6 +10,7 @@ require 'devise'
 require 'shoulda/matchers'
 require 'rspec/json_expectations'
 require 'database_cleaner'
+require 'pundit/rspec'
 
 begin
   ActiveRecord::Migration.maintain_test_schema!
