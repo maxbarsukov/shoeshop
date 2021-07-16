@@ -38,7 +38,7 @@ RSpec.describe ItemsController, type: :controller do
   end
 
   describe 'DELETE #destroy' do
-    let(:create_params) { { id: product.id, product_id: product.id } }
+    let(:create_params) { { id: item.id, product_id: product.id } }
 
     subject { delete :destroy, params: create_params }
 
