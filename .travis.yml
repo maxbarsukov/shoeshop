@@ -16,4 +16,4 @@ before_script:
 script:
   - bundle exec rspec
   - bundle exec brakeman --exit-on-warn -f plain -5
-  - bundle exec rails_best_practices . --spec --vendor -c config/rails_best_practices.yml
+  - bundle exec rails_best_practices . --spec -c config/rails_best_practices.yml
