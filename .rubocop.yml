@@ -1,0 +1,46 @@
+# Extensions
+require:
+  - rubocop-rake
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-performance
+
+# Cop files to ignore
+AllCops:
+  NewCops: enable
+  Exclude:
+    - Gemfile
+    - Rakefile
+    - 'db/schema.rb'
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - 'spec/fixtures/**/*'
+    - 'tmp/**/*'
+    - '.git/**/*'
+    - 'bin/*'
+  TargetRubyVersion: 2.7
+  SuggestExtensions: false
+
+Lint/DuplicateRequire:
+  Enabled: true
+Lint/EmptyFile:
+  Enabled: true
+Lint/TrailingCommaInAttributeDeclaration:
+  Enabled: true
+Lint/UselessMethodDefinition:
+  Enabled: true
+Style/CombinableLoops:
+  Enabled: true
+Style/KeywordParametersOrder:
+  Enabled: true
+Style/RedundantSelfAssignment:
+  Enabled: true
+Style/SoleNestedConditional:
+  Enabled: true
+Rails/AfterCommitOverride:
+  Enabled: true
+Rails/SquishedSQLHeredocs:
+  Enabled: true
+Rails/WhereNot:
+  Enabled: true
+
