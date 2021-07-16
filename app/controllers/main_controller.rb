@@ -3,7 +3,7 @@ class MainController < ApplicationController
 
   def index
     @brands = Brand.limit(3)
-    @hits   = Product.hit.limit(8)
+    @hits   = Product.active.hit.limit(8)
   end
 
   private
