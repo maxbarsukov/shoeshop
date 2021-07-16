@@ -5,6 +5,9 @@
 # Ignore bundler config.
 /.bundle
 
+# Ignore Coveralls folder
+/coverage
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
