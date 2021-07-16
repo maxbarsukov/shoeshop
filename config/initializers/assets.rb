@@ -8,6 +8,10 @@ Rails.application.config.assets.version = '1.0'
 # Add Yarn node_modules folder to the asset load path.
 Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
+Rails.application.config.assets.paths << "#{Rails.root}/app/assets/images/products"
+Rails.application.config.assets.paths << "#{Rails.root}/app/assets/images/banner"
+Rails.application.config.assets.paths << "#{Rails.root}/app/assets/images/brands"
+
 Rails.application.config.assets.paths += [
   Rails.root.join('vendor', 'assets').to_s
 ]
