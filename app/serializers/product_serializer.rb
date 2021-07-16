@@ -26,9 +26,12 @@ class ProductSerializer < ActiveModel::Serializer
              :content,
              :price,
              :old_price,
-             :description
+             :description,
+             :hit,
+             :status
 
   belongs_to :category
+  has_many :related, through: :related_products
 
   def short_title
     object.title.truncate(8)
