@@ -1,0 +1,42 @@
+/ banner-starts
+#home.bnr
+  #top.callbacks_container
+    %ul#slider4.rslides
+      %li
+        = image_tag 'banner/bnr-1.jpg', alt: 'First Banner'
+      %li
+        = image_tag 'banner/bnr-2.jpg', alt: 'Second Banner'
+      %li
+        = image_tag 'banner/bnr-3.jpg', alt: 'Third Banner'
+  .clearfix
+/ banner-ends
+- if @brands.nil?
+  %h2 No Brands
+- else
+  / about-starts
+  .about
+    .container
+      .about-top.grid-1
+        - @brands.each do |brand|
+          .col-md-4.about-left
+            %figure.effect-bubba
+              = image_tag 'brands/' + brand.img, alt: "Brand", class: "img-responsive"
+              %figcaption
+                %h2= brand.title
+                %p= brand.description
+        .clearfix
+  / about-end
+- if @hits.nil?
+  %h2 No Hits
+- else
+  / product-starts
+  .product
+    .container
+      .product-top
+        .product-one
+          - @hits.each do |hit|
+            .col-md-3.product-left
+              = render 'include/product/product', product: hit
+          .clearfix
+%input#cart_access{:type => "hidden", :value => "#{current_user ? 88 : 99}"}/
+/ product-end

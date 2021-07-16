@@ -1,0 +1,56 @@
+.top-header
+  .container
+    .top-header-main
+      .col-md-6.top-header-left
+        .drop
+          .box
+            %select.dropdown.drop{:tabindex => "4"}
+              %option.label{:value => ""} Dollar :
+              %option{:value => "1"} Dollar
+              %option{:value => "2"} Euro
+          .box1
+            %select.dropdown{:tabindex => "4"}
+              %option.label{:value => ""} English :
+              %option{:value => "1"} English
+              %option{:value => "2"} Russian
+              %option{:value => "3"} French
+          .btn-group
+            %a.dropdown-toggle{"aria-expanded" => "true", "data-toggle" => "dropdown"}
+              Account
+              %span.caret
+            %ul#account-dropdown.dropdown-menu
+              - if user_signed_in?
+                - if current_user.try(:admin?)
+                  %li
+                    = link_to 'Administrator', '#', style: "color: red;"
+                  %li
+                    = link_to 'API', '/oauth/applications', style: "color: blue;"
+                  %li.dropdown-divider
+                %li
+                  %a
+                    Welcome, #{current_user.email}
+                %li.dropdown-divider
+                %li
+                  = link_to 'Edit', edit_user_registration_path
+                %li
+                  = link_to 'Sign Out', destroy_user_session_path, method: :delete
+              - else
+                %li
+                  = link_to 'Sign In', new_user_session_path
+                %li
+                  = link_to 'Sign Up', new_user_registration_path
+          .clearfix
+      .col-md-6.top-header-left
+        - if current_user
+          .cart.box_1
+            %a{:href => "/cart", :onclick => "getCart(); return false;"}
+              .total
+                = image_tag 'cart-1.png', alt: 'Cart'
+                %span.simpleCart1_total
+                  - if current_cart.empty?
+                    Empty Cart
+                  - else
+                    = format('%.2f', current_cart.total_price)
+                    $
+            .clearfix
+      .clearfix

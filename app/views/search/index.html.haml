@@ -1,0 +1,26 @@
+/ start-breadcrumbs
+.breadcrumbs
+  .container
+    .breadcrumbs-main
+      %ol.breadcrumb
+        %li
+          %a{:href => "/"}= render_breadcrumbs
+        %li Search by request
+/ end-breadcrumbs
+/ prdt-starts
+.prdt
+  .container
+    .prdt-top
+      .col-md-9.prdt-left
+        - if @products.empty?
+          %h3 Nothing to show
+        - else
+          .product-one
+            - @products.each do |product|
+              .col-md-4.product-left.p-left
+                = render 'include/product/product', product: product
+            .clearfix
+      .col-md-3.prdt-right
+        = render 'include/shared/sidebar'
+      .clearfix
+/ prdt-ends

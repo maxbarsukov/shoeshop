@@ -1,0 +1,25 @@
+/ start-breadcrumbs
+.breadcrumbs
+  .container
+    .breadcrumbs-main
+      %ol.breadcrumb
+        %li= link_to render_breadcrumbs, root_path
+        %li= @category.title
+/ end-breadcrumbs
+/ prdt-starts
+.prdt
+  .container
+    .prdt-top
+      .col-md-9.prdt-left
+        - if @category.products.empty?
+          %h3 No products in this category yet
+        - else
+          .product-one
+            - @category.products.each do |product|
+              .col-md-4.product-left.p-left
+                = render 'include/product/product', product: product
+            .clearfix
+      .col-md-3.prdt-right
+        = render 'include/shared/sidebar'
+      .clearfix
+/ prdt-ends

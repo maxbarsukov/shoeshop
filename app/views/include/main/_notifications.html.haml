@@ -1,0 +1,10 @@
+- if notice
+  .alert.alert-success{:role => "alert"}
+    %button.close{"aria-label" => "Close", :onclick => "this.parentElement.style.display='none'", :type => "button"}
+      %span{"aria-hidden" => "true"} ×
+    = notice
+- if alert
+  .alert.alert-danger{:role => "alert"}
+    %button.close{"aria-label" => "Close", :onclick => "this.parentElement.style.display='none'", :type => "button"}
+      %span{"aria-hidden" => "true"} ×
+    = alert

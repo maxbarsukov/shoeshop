@@ -1,0 +1,198 @@
+/ start-breadcrumbs
+.breadcrumbs
+  .container
+    .breadcrumbs-main
+      %ol.breadcrumb
+        %li
+          %a{:href => "/"}= render_breadcrumbs
+        %li.active= link_to @product.category.title, category_path(@product.category)
+        %li.active= @product.title
+/ end-breadcrumbs
+/ start-single
+.single.contact
+  .container
+    .single-main
+      .col-md-9.single-main-left
+        .sngl-top
+          .col-md-5.single-top-left
+            - if @product.galleries.present?
+              .flexslider
+                %ul.slides
+                  - @product.galleries.each do |item|
+                    %li{"data-thumb" => "#{asset_path 'products/' + item.img}"}
+                      .thumb-image
+                        %img.img-responsive{:alt => "Product Image", "data-imagezoom" => "true", :src => "#{asset_path 'products/' + item.img}"}/
+            - else
+              .flexslider
+                %ul.slides
+                  %li{"data-thumb" => "#{asset_path 'products/' + @product.img}"}
+                    .thumb-image
+                      %img.img-responsive{:alt => "Product Image", "data-imagezoom" => "true", :src => "#{asset_path 'products/' + @product.img}"}/
+                  %li{"data-thumb" => "#{asset_path 'products/s-2.jpg'}"}
+                    .thumb-image
+                      %img.img-responsive{:alt => "Product Image", "data-imagezoom" => "true", :src => "#{asset_path 'products/s-2.jpg'}"}/
+                  %li{"data-thumb" => "#{asset_path 'products/s-3.jpg'}"}
+                    .thumb-image
+                      %img.img-responsive{:alt => "Product Image", "data-imagezoom" => "true", :src => "#{asset_path 'products/s-3.jpg'}"}/
+          .col-md-7.single-top-right
+            .single-para.simpleCart_shelfItem
+              %h2= @product.title
+              %h4= @product.bytitle
+              .star-on
+                %ul.star-footer
+                  %li
+                    %a{:href => "#"}
+                      %i
+                  %li
+                    %a{:href => "#"}
+                      %i
+                  %li
+                    %a{:href => "#"}
+                      %i
+                  %li
+                    %a{:href => "#"}
+                      %i
+                  %li
+                    %a{:href => "#"}
+                      %i
+                .review
+                  %a{:href => "#"} 1 customer review
+                .clearfix
+              %h5.item_price
+                $ #{@product.price}
+              - if @product.old_price
+                %small
+                  %del= @product.old_price
+              %p= @product.content
+              .available
+                %ul
+                  %li
+                    Color
+                    %select
+                      %option Black
+                      %option White
+                      %option Green
+                      %option Red
+                  %li.size-in
+                    Size
+                    %select
+                      %option 35
+                      %option 37
+                      %option 39
+                      %option 41
+                      %option 43
+                      %option 45
+                  .clearfix
+              %ul.tag-men
+                %li
+                  %span CATEGORY
+                  %strong
+                    \: #{link_to @product.category.title, category_path(@product.category)}
+              .quantity
+                %input{:min => "1", :name => "quantity", :size => "4", :step => "1", :type => "number", :value => "1"}/
+              = link_to 'ADD TO CART',                       |
+                cart_items_path,                             |
+                remote: true,                                |
+                data: { method: :post, id: @product.id },    |
+                class: "add-cart item_add add-to-cart-link", |
+                id: "productAdd"                             |
+          .clearfix
+        .tabs
+          %ul.menu_drop
+            %li.item1
+              %a{:href => "#"}
+                %img{:alt => "", :src => "#{asset_path 'arrow.png'}"}>/
+                Description
+              %ul
+                %li.subitem1
+                  %a{:href => "#"}
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                %li.subitem2
+                  %a{:href => "#"}
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                %li.subitem3
+                  %a{:href => "#"}
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            %li.item2
+              %a{:href => "#"}
+                %img{:alt => "", :src => "#{asset_path 'arrow.png'}"}>/
+                Additional information
+              %ul
+                %li.subitem1
+                  %a{:href => "#"}
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                %li.subitem2
+                  %a{:href => "#"}
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                %li.subitem3
+                  %a{:href => "#"}
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            %li.item3
+              %a{:href => "#"}
+                %img{:alt => "", :src => "#{asset_path 'arrow.png'}"}>/
+                Reviews (10)
+              %ul
+                %li.subitem1
+                  %a{:href => "#"}
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                %li.subitem2
+                  %a{:href => "#"}
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                %li.subitem3
+                  %a{:href => "#"}
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            %li.item4
+              %a{:href => "#"}
+                %img{:alt => "", :src => "#{asset_path 'arrow.png'}"}>/
+                Helpful Links
+              %ul
+                %li.subitem1
+                  %a{:href => "#"}
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                %li.subitem2
+                  %a{:href => "#"}
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                %li.subitem3
+                  %a{:href => "#"}
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            %li.item5
+              %a{:href => "#"}
+                %img{:alt => "", :src => "#{asset_path 'arrow.png'}"}>/
+                Make A Gift
+              %ul
+                %li.subitem1
+                  %a{:href => "#"}
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                %li.subitem2
+                  %a{:href => "#"}
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                %li.subitem3
+                  %a{:href => "#"}
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        - unless @product.related.nil?
+          .latestproducts
+            .product-one
+              - if @product.related.any?
+                %h3 Related Products
+                - @product.related.each do |related|
+                  .col-md-4.product-left.p-left
+                    = render 'include/product/product', product: related
+                .clearfix
+        - if recent_products.any?
+          .latestproducts
+            .product-one
+              %h3 Recently Products
+              - recent_products.each do |recently|
+                .col-md-4.product-left.p-left
+                  = render 'include/product/product', product: recently
+              .clearfix
+      .col-md-3.single-right
+        = render 'include/shared/sidebar'
+      .clearfix
+/ end-single
+%input#cart_access{:type => "hidden", :value => "#{current_user ? 88 : 99}"}/

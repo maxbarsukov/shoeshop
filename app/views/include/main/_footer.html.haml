@@ -1,0 +1,86 @@
+.information
+  .container
+    .infor-top
+      .col-md-3.infor-left
+        %h3 Follow Us
+        %ul
+          %li
+            %a{:href => "#"}
+              %span.fb
+              %h6 Facebook
+          %li
+            %a{:href => "#"}
+              %span.twit
+              %h6 Twitter
+          %li
+            %a{:href => "#"}
+              %span.google
+              %h6 Google+
+      .col-md-3.infor-left
+        %h3 Information
+        %ul
+          %li
+            %a{:href => "#"}
+              %p Specials
+          %li
+            %a{:href => "#"}
+              %p New products
+          %li
+            %a{:href => "#"}
+              %p Our Stores
+          %li
+            %a{:href => "contact.html"}
+              %p Contact us
+          %li
+            %a{:href => "#"}
+              %p Top Sellers
+      .col-md-3.infor-left
+        %h3 My Account
+        %ul
+          %li
+            %a{:href => "account.html"}
+              %p My Account
+          %li
+            %a{:href => "#"}
+              %p My Credit slips
+          %li
+            %a{:href => "#"}
+              %p My Merchandise returns
+          %li
+            %a{:href => "#"}
+              %p My Personal info
+          %li
+            %a{:href => "#"}
+              %p My Addresses
+      .col-md-3.infor-left
+        %h3 Store Information
+        %h4
+          SHOESTORE,
+          %span lorem lorem loerm,
+          Lorem Dr 1 Fe 2,
+        %h5 +7 800 555-35-35
+        %p
+          %a{:href => "mailto:shoestore@gmail.com"} shoestore@gmail.com
+      .clearfix
+.footer
+  .container
+    .footer-top
+      .col-md-6.footer-left
+        %form
+          %input{:onblur => "if (this.value === '') {this.value = 'Enter Your Email';}", :onfocus => "this.value = '';", :type => "text", :value => "Enter Your Email"}/
+          %input{:type => "submit", :value => "Subscribe"}/
+      .col-md-6.footer-right
+        %p © 2021 SHOESHOP. All Rights Reserved
+      .clearfix
+#cart.modal.fade{"aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog.modal-lg{:role => "document"}
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+        %h4#myModalLabel.modal-title Cart
+      .modal-body
+      .modal-footer
+        %button.btn.btn-default-outline{"data-dismiss" => "modal", :type => "button"} Continue shopping
+        %a.btn.btn-primary{:href => "cart/index", :type => "button"} Place an order
+        %button.btn.btn-danger{:onclick => "clearCart()", :type => "button"} Empty the cart

@@ -1,0 +1,23 @@
+.container
+  .header
+    .col-md-9.header-left
+      .top-nav
+        %ul.memenu.skyblue
+          %li.active
+            %a{:href => "/"} Home
+          - Category.roots.each do |category|
+            - cache category do
+              %li.grid
+                = link_to category.title, category_path(category)
+                - if category.children.present?
+                  .mepanel
+                    .row
+                      .fcol1.me-one
+                        = render 'include/menu/menu', category: category, cached: true
+      .clearfix
+    .col-md-3.header-right
+      .search-bar
+        %form{:action => "/search", :autocomplete => "off", :method => "get"}
+          %input#typeahead.typeahead{:name => "query", :placeholder => "Search...", :type => "text"}/
+          %input{:type => "submit", :value => ""}/
+    .clearfix

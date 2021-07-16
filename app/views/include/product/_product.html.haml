@@ -1,0 +1,16 @@
+.product-main.simpleCart_shelfItem
+  = link_to (image_tag 'products/' + product.img, class: "img-responsive zoom-img"), product_path(product), class: "mask"
+  .product-bottom
+    %h3= link_to product.title, product_path(product)
+    %p Explore Now
+    %h4
+      %a.item_add.add-to-cart-link{"data-id" => "#{product.id}", :href => "cart/add?id=#{product.id}"}
+        %i
+      %span.item_price
+        $ #{product.price}
+      - if product.old_price
+        %small
+          %del= product.old_price
+  .srch
+    %span
+      \- #{product.discount} %
