@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_15_104542) do
+ActiveRecord::Schema.define(version: 2021_07_16_103033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 2021_07_15_104542) do
     t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["cart_id"], name: "index_cart_items_on_cart_id"
+    t.index ["product_id"], name: "index_cart_items_on_product_id"
   end
 
   create_table "carts", force: :cascade do |t|
@@ -62,6 +64,7 @@ ActiveRecord::Schema.define(version: 2021_07_15_104542) do
   create_table "galleries", force: :cascade do |t|
     t.integer "product_id"
     t.string "img"
+    t.index ["product_id"], name: "index_galleries_on_product_id"
   end
 
   create_table "oauth_access_grants", force: :cascade do |t|
@@ -121,11 +124,15 @@ ActiveRecord::Schema.define(version: 2021_07_15_104542) do
     t.integer "hit", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["brand_id"], name: "index_products_on_brand_id"
+    t.index ["category_id"], name: "index_products_on_category_id"
   end
 
   create_table "related_products", force: :cascade do |t|
     t.integer "product_id"
     t.integer "related_id"
+    t.index ["product_id"], name: "index_related_products_on_product_id"
+    t.index ["related_id"], name: "index_related_products_on_related_id"
   end
 
   create_table "users", force: :cascade do |t|
