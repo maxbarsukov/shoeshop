@@ -15,3 +15,4 @@ before_script:
   - bundle exec rake db:schema:load
 script:
   - bundle exec rspec
+  - bundle exec brakeman --exit-on-warn -f plain -5

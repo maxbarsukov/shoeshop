@@ -117,6 +117,8 @@ group :development do
   gem 'active_record_doctor', '~> 1.8',  require: false
   # Code quality reporter
   gem 'rubycritic', require: false
+  # Static analysis security vulnerability scanner for RoR applications
+  gem 'brakeman', require: false
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'

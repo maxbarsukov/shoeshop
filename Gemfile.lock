@@ -71,6 +71,7 @@ GEM
     bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
       sassc (>= 2.0.0)
+    brakeman (5.0.4)
     breadcrumbs_on_rails (4.1.0)
       railties (>= 5.0)
     builder (3.2.4)
@@ -448,6 +449,7 @@ DEPENDENCIES
   annotate (~> 3.1, >= 3.1.1)
   bootsnap (>= 1.1.0)
   bootstrap-sass (~> 3.4, >= 3.4.1)
+  brakeman
   breadcrumbs_on_rails (~> 4.1)
   bullet (~> 6.1, >= 6.1.4)
   byebug
