@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    cart_items.find_by(item_params).destroy
+    cart_items.find_by(item_params).destroy!
     render :create
   end
 

@@ -24,29 +24,29 @@ brand_attributes = [{
                     }]
 
 brand_attributes.each do |attr|
-  Brand.create(attr) unless Brand.where(attr).first
+  Brand.create!(attr) unless Brand.where(attr).first
 end
 
 
-men = Category.create(title: 'Men', bytitle: 'men', keywords: 'men', description: 'for men')
-women = Category.create(title: 'Women', bytitle: 'women', keywords: 'women', description: 'for women')
-kids = Category.create(title: 'Kids', bytitle: 'kids', keywords: 'kids', description: 'for kids')
+men = Category.create!(title: 'Men', bytitle: 'men', keywords: 'men', description: 'for men')
+women = Category.create!(title: 'Women', bytitle: 'women', keywords: 'women', description: 'for women')
+kids = Category.create!(title: 'Kids', bytitle: 'kids', keywords: 'kids', description: 'for kids')
 
-sling = Category.create(title: 'Sling', bytitle: 'sling', keywords: 'sling', description: 'sling', parent: women)
-sleepons = Category.create(title: 'Sleepons', bytitle: 'sleepons', keywords: 'sleepons', description: 'sleepons', parent: women)
+sling = Category.create!(title: 'Sling', bytitle: 'sling', keywords: 'sling', description: 'sling', parent: women)
+sleepons = Category.create!(title: 'Sleepons', bytitle: 'sleepons', keywords: 'sleepons', description: 'sleepons', parent: women)
 
-flipflops = Category.create(title: 'Flipflops', bytitle: 'flipflops', keywords: 'flipflops', description: 'flipflops', parent: sleepons)
-highheels = Category.create(title: 'Highheels', bytitle: 'highheels', keywords: 'highheels', description: 'highheels', parent: sling)
+flipflops = Category.create!(title: 'Flipflops', bytitle: 'flipflops', keywords: 'flipflops', description: 'flipflops', parent: sleepons)
+highheels = Category.create!(title: 'Highheels', bytitle: 'highheels', keywords: 'highheels', description: 'highheels', parent: sling)
 
-loafers = Category.create(title: 'Loafers', bytitle: 'loafers', keywords: 'loafers', description: 'loafers', parent: men)
-sneakers = Category.create(title: 'Sneakers', bytitle: 'sneakers', keywords: 'sneakers', description: 'sneakers', parent: men)
-convers = Category.create(title: 'Convers', bytitle: 'convers', keywords: 'convers', description: 'convers', parent: sneakers)
+loafers = Category.create!(title: 'Loafers', bytitle: 'loafers', keywords: 'loafers', description: 'loafers', parent: men)
+sneakers = Category.create!(title: 'Sneakers', bytitle: 'sneakers', keywords: 'sneakers', description: 'sneakers', parent: men)
+convers = Category.create!(title: 'Convers', bytitle: 'convers', keywords: 'convers', description: 'convers', parent: sneakers)
 
-derby = Category.create(title: 'Derby', bytitle: 'derby', keywords: 'derby', description: 'derby', parent: loafers)
-business = Category.create(title: 'Business', bytitle: 'business', keywords: 'business', description: 'business', parent: loafers)
+derby = Category.create!(title: 'Derby', bytitle: 'derby', keywords: 'derby', description: 'derby', parent: loafers)
+business = Category.create!(title: 'Business', bytitle: 'business', keywords: 'business', description: 'business', parent: loafers)
 
-clogs = Category.create(title: 'Clogs', bytitle: 'clogs', keywords: 'clogs', description: 'clogs', parent: kids)
-crocs = Category.create(title: 'Crocs', bytitle: 'crocs', keywords: 'crocs', description: 'crocs', parent: kids)
+clogs = Category.create!(title: 'Clogs', bytitle: 'clogs', keywords: 'clogs', description: 'clogs', parent: kids)
+crocs = Category.create!(title: 'Crocs', bytitle: 'crocs', keywords: 'crocs', description: 'crocs', parent: kids)
 
 
 product_attributes = [
@@ -277,7 +277,7 @@ product_attributes = [
 ]
 
 product_attributes.each do |attr|
-  Product.create(attr) unless Product.where(attr).first
+  Product.create!(attr) unless Product.where(attr).first
 end
 
 connection = ActiveRecord::Base.connection()
