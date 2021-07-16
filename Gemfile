@@ -130,13 +130,19 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # Code style checking and code formatting tool
+  gem 'rubocop', require: false
+  gem 'rubocop-rake', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
+  gem 'rubocop-faker', require: false
+  gem 'rubocop-performance', require: false
 end
 
 group :test do
   # Provides RSpec- and Minitest-compatible one-liners to test common Rails functionality
   gem 'shoulda-matchers', '~> 4.5', '>= 4.5.1'
-  # Code style checking and code formatting tool
-  gem 'rubocop', '~> 1.18', '>= 1.18.2', require: false
   # for launching cross-platform applications
   gem 'launchy', '~> 2.5'
   # RSpec matchers and Cucumber steps for testing JSON content
