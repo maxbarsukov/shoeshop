@@ -7,9 +7,7 @@ class ApplicationController < ActionController::Base
     @current_cart ||= Cart.find_or_create_by(user: current_user)
   end
 
-  def cart_items
-    current_cart.cart_items
-  end
+  delegate :cart_items, to: :current_cart
 
   helper_method :current_cart, :cart_items
 
