@@ -16,6 +16,7 @@
   / about-starts
   .about
     .container
+      %h4.mini-title Brands
       .about-top.grid-1
         - @brands.each do |brand|
           .col-md-4.about-left
@@ -33,6 +34,7 @@
   .product
     .container
       .product-top
+        %h4.mini-title Hits
         .product-one
           - @hits.each do |hit|
             .col-md-3.product-left
