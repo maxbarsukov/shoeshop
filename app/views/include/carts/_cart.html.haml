@@ -9,7 +9,7 @@
             %th Quantity
             %th Price
             %th
-              %span.glyphicon.glyphicon-remove{"aria-hidden" => "true"}
+              %span{"aria-hidden" => "true"}✖
         %tbody
           - products.each do |item|
             %tr
@@ -24,7 +24,7 @@
                 pieces
               %td= item.product.price
               %td
-                %span.glyphicon.glyphicon-remove.text-danger.del-item{"aria-hidden" => "true", "data-id" => "#{item.id}"}
+                %span.text-danger.del-item{"aria-hidden" => "true", "data-id" => "#{item.id}"}✖
           %tr
             %td Total:
             %td.text-right.cart-qty{:colspan => "4"}
