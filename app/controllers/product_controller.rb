@@ -1,8 +1,12 @@
 class ProductController < ApplicationController
-  before_action :set_product
+  before_action :set_product, only: [:show]
   helper_method :recent_products
 
   after_action :register_visit, only: [:show]
+
+  def index
+    @products = Product.active
+  end
 
   def show
     authorize @product
