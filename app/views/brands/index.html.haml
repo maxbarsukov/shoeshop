@@ -1,2 +1,26 @@
-%h1 Brands#index
-%p Find me in app/views/brands/index.html.haml
+/ start-breadcrumbs
+.breadcrumbs
+  .container
+    .breadcrumbs-main
+      %ol.breadcrumb
+        %li= link_to 'Home', '/'
+        %li.active Brands
+/ end-breadcrumbs
+- if @brands.nil?
+  %h2 No Brands
+- else
+  / about-starts
+  .about
+    .container
+      .about-top.grid-1
+        .row.text-center
+          - @brands.each do |brand|
+            = link_to brand_path(brand) do
+              .col-md-4.about-left
+                %figure.effect-bubba
+                  = image_tag 'brands/' + brand.img, alt: "Brand", class: "img-responsive"
+                  %figcaption
+                    %h2= brand.title
+                    %p= brand.description
+        .clearfix
+  / about-end
