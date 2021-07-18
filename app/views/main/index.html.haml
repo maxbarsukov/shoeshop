@@ -16,16 +16,17 @@
   / about-starts
   .about
     .container
-      = link_to root_path do
+      = link_to brands_path do
         %h2.mini-title Brands
       .about-top.grid-1
         - @brands.each do |brand|
-          .col-md-4.about-left
-            %figure.effect-bubba
-              = image_tag 'brands/' + brand.img, alt: "Brand", class: "img-responsive"
-              %figcaption
-                %h2= brand.title
-                %p= brand.description
+          = link_to brand_path(brand) do
+            .col-md-4.about-left
+              %figure.effect-bubba
+                = image_tag 'brands/' + brand.img, alt: "Brand", class: "img-responsive"
+                %figcaption
+                  %h2= brand.title
+                  %p= brand.description
         .clearfix
   / about-end
 - if @hits.nil?
