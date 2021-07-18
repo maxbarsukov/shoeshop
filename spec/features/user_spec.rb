@@ -104,4 +104,67 @@ RSpec.describe 'Users', type: :feature do
       expect(page).not_to have_content('Signed in successfully.')
     end
   end
+
+  describe 'log in as admin' do
+    let!(:admin) { create(:user, admin: true) }
+
+    scenario 'user have links to API' do
+      visit new_user_session_path
+
+      fill_in 'Email',                  with: admin.email
+      fill_in 'Password',               with: admin.password
+
+      click_button 'Log In'
+
+      expect(page).to have_content('Administrator')
+      expect(page).to have_content('API')
+    end
+  end
+
+  describe 'log out' do
+    let!(:user) { create(:user)}
+
+    scenario 'successfully log out' do
+      visit new_user_session_path
+
+      fill_in 'Email',                  with: user.email
+      fill_in 'Password',               with: user.password
+
+      click_button 'Log In'
+
+      visit root_path
+
+      click_on 'Sign Out'
+      expect(page).to have_content('Signed out successfully.')
+    end
+  end
+
+  describe 'edit user' do
+    context 'user does not exists' do
+      let!(:user) { nil }
+
+      scenario 'can not edit user' do
+        visit edit_user_registration_path
+        expect(page).to have_content('You need to sign in or sign up before continuing.')
+      end
+    end
+
+    context 'user exists' do
+      let!(:user) { create(:user) }
+
+      scenario 'change email with valid inputs' do
+        visit new_user_session_path
+        fill_in 'Email',                  with: user.email
+        fill_in 'Password',               with: user.password
+        click_button 'Log In'
+
+        visit edit_user_registration_path
+
+        fill_in 'Email',            with: '111' + user.email
+        fill_in 'Current password', with: user.password
+        click_button 'Update'
+        expect(page).to have_content('Your account has been updated successfully.')
+      end
+    end
+  end
 end
