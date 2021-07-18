@@ -24,5 +24,5 @@ class User < ApplicationRecord
   has_many :authorizations
 
   validates :email,    presence: true
-  validates :password, presence: true
+  validates :encrypted_password, presence: true
 end
