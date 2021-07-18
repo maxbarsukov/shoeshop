@@ -18,4 +18,20 @@ RSpec.describe ProductController, type: :controller do
       end
     end
   end
+
+  describe 'GET #index' do
+    let(:products) { create_list :product, 5 }
+
+    before { get :index }
+
+    context 'show products' do
+      it 'render index view' do
+        is_expected.to render_template :index
+      end
+
+      it 'instance vat products includes all products' do
+        expect(assigns(:products)).to match_array(products)
+      end
+    end
+  end
 end
