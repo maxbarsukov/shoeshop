@@ -7,6 +7,7 @@ RSpec.describe CartPolicy, type: :policy do
   let(:product) { create :product }
   let(:cart)    { create :cart, user: user }
   let(:item)    { create :cart_item, cart: cart, product: product }
+  let(:scope)   { Pundit.policy_scope!(user, Cart) }
 
   subject { described_class }
 
@@ -26,5 +27,29 @@ RSpec.describe CartPolicy, type: :policy do
   permissions :destroy? do
     let(:user) { nil }
     it { should_not permit(user) }
+  end
+
+  describe 'Scope' do
+    context 'client user' do
+      it 'allows access to all the reports' do
+        expect(scope).to eq []
+      end
+    end
+
+    context 'admin user' do
+      let(:user) { User.new(admin: true) }
+
+      it 'allows access to all the reports' do
+        expect(scope).to eq []
+      end
+    end
+
+    context 'visitor' do
+      let(:user) { nil }
+
+      it 'allows access to all the reports' do
+        expect(scope).to eq []
+      end
+    end
   end
 end
