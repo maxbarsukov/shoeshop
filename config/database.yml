@@ -16,4 +16,4 @@ production:
   database: yetanothershop_production
   username: yetanothershop
   host: localhost
-  password: <%= ENV['YETANOTHERSHOP_DATABASE_PASSWORD'] %>
+  password: <%= ENV['SHOESHOP_DATABASE_PASSWORD'] %>
