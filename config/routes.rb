@@ -40,7 +40,10 @@
 #                                  POST     /users(.:format)                                                                         devise/registrations#create
 #             api_v1_profile_index GET      /api/v1/profile(.:format)                                                                api/v1/profile#index
 #                  api_v1_products GET      /api/v1/products(.:format)                                                               api/v1/products#index
+#                    product_index GET      /product(.:format)                                                                       product#index
 #                          product GET      /product/:id(.:format)                                                                   product#show
+#                           brands GET      /brands(.:format)                                                                        brands#index
+#                            brand GET      /brands/:id(.:format)                                                                    brands#show
 #                         category GET      /category/:id(.:format)                                                                  category#show
 #                     search_index GET      /search(.:format)                                                                        search#index
 #                       cart_items POST     /cart/items(.:format)                                                                    items#create
