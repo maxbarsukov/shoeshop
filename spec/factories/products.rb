@@ -23,8 +23,8 @@
 FactoryBot.define do
   factory :product do
     association :category, factory: :category
+    association :brand, factory: :brand
 
-    brand_id    { rand(1..5) }
     title       { Faker::Lorem.word.camelcase }
     bytitle     { title.downcase }
     img         { 'p-1.png' }
