@@ -20,7 +20,7 @@ RSpec.describe ProductController, type: :controller do
   end
 
   describe 'GET #index' do
-    let(:products) { create_list :product, 5 }
+    let!(:products) { create_list :product, 5 }
 
     before { get :index }
 
@@ -29,8 +29,13 @@ RSpec.describe ProductController, type: :controller do
         is_expected.to render_template :index
       end
 
-      it 'instance vat products includes all products' do
+      it 'instance var products includes all products' do
         expect(assigns(:products)).to match_array(products)
+      end
+
+      it 'products data in response' do
+        expect(response.body).to include(products.first.title,
+                                         products.second.title)
       end
     end
   end
