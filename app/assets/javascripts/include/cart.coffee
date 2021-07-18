@@ -6,7 +6,7 @@ $(document).on 'turbolinks:load', ->
       return
 
   window.showCart = (cart) ->
-    if $.trim(cart) == '<td>Cart is Empty</td>'
+    if $.trim(cart) == '<h3>Cart is Empty</h3>'
       $('#cart .modal-footer a, #cart .modal-footer .btn-danger').css 'display', 'none'
     else
       $('#cart .modal-footer a, #cart .modal-footer .btn-danger').css 'display', 'inline-block'
