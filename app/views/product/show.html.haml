@@ -88,6 +88,10 @@
                   %span CATEGORY
                   %strong
                     \: #{link_to @product.category.title, category_path(@product.category)}
+                %li
+                  %span BRAND
+                  %strong
+                    \: #{link_to @product.brand.title, brand_path(@product.brand)}
               .quantity
                 %input{:min => "1", :name => "quantity", :size => "4", :step => "1", :type => "number", :value => "1"}/
               = link_to 'ADD TO CART',                       |
