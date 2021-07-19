@@ -22,7 +22,10 @@
               - if user_signed_in?
                 - if current_user.try(:admin?)
                   %li
-                    = link_to 'Administrator', '#', style: "color: red;"
+                    %a{style: "color: red;"}
+                      Administrator
+                  %li
+                    = link_to 'Admin Page', '/admin', style: "color: green;"
                   %li
                     = link_to 'API', '/oauth/applications', style: "color: blue;"
                   %li.dropdown-divider
