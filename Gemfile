@@ -74,6 +74,9 @@ gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'haml', '~> 5.2', '>= 5.2.1'
 gem 'haml-rails', '~> 2.0', '>= 2.0.1'
 
+# Provides an easy-to-use interface for managing your data
+gem 'rails_admin', '~> 2.1', '>= 2.1.1'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
