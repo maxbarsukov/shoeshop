@@ -11,7 +11,16 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_cart, :cart_items
 
-  rescue_from Pundit::NotAuthorizedError do
-    redirect_to root_path, alert: 'Log in or Sign Up to view this content'
+  rescue_from Pundit::NotAuthorizedError, with: :not_authorized
+
+  private
+
+  def not_authorized
+    if current_user
+      flash[:alert] = 'You must be an administrator to access this page'
+    else
+      flash[:alert] = 'You need to sign in or sign up before continuing'
+    end
+    redirect_to main_app.root_path
   end
 end
