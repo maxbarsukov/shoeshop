@@ -1,7 +1,9 @@
 !!!
 %html{:lang => "en"}
   %head
-    = display_meta_tags title: @page_title, description: @page_description, keywords: @page_keywords
+    = display_meta_tags title:        @page_title        || 'Shoe Store',
+                        description:  @page_description  || 'The Best Fake Shoe Store That Ever Existed',
+                        keywords:     @page_keywords     || 'Shoe Store Man Woman Kids'
     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
     %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
     = favicon_link_tag 'favicon.ico'
