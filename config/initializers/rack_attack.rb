@@ -20,7 +20,7 @@ class Rack::Attack
   end
 
   # Throttle all requests to root path by IP (40rpm/IP)
-  throttle("req/ip", :limit => 40, :period => 1.minute) do |req|
+  throttle("req/ip", limit: 40, period: 1.minute) do |req|
     req.remote_ip
   end
 
