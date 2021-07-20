@@ -80,6 +80,9 @@ gem 'rails_admin', '~> 2.1', '>= 2.1.1'
 # Agnostic pagination in plain ruby
 gem 'pagy', '~> 4.10', '>= 4.10.1'
 
+# A rack middleware for throttling and blocking abusive requests
+gem 'rack-attack', '~> 6.5'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
