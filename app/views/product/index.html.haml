@@ -17,7 +17,7 @@
         - else
           = render 'include/product/products', products: @products
           .text-center
-            != pagy_bootstrap_nav(@pagy)
+            != pagy_bootstrap_nav_js(@pagy)
       .col-md-3.prdt-right
         = render 'include/shared/sidebar'
       .clearfix
