@@ -5,7 +5,7 @@ class ProductController < ApplicationController
   after_action :register_visit, only: [:show]
 
   def index
-    @products = Product.active
+    @pagy, @products = pagy(Product.active)
   end
 
   def show

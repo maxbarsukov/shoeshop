@@ -16,6 +16,7 @@
           %h3 Nothing to show
         - else
           = render 'include/product/products', products: @products
+          != pagy_nav(@pagy)
       .col-md-3.prdt-right
         = render 'include/shared/sidebar'
       .clearfix
