@@ -14,11 +14,7 @@
         - if @category.products.empty?
           %h3 No products in this category yet
         - else
-          .product-one
-            - @category.products.each do |product|
-              .col-md-4.product-left.p-left
-                = render 'include/product/product', product: product
-            .clearfix
+          = render 'include/product/products', products: @category.products
       .col-md-3.prdt-right
         = render 'include/shared/sidebar'
       .clearfix

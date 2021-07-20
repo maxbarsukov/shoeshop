@@ -1,0 +1,5 @@
+.product-one
+  - products.each do |product|
+    .col-md-4.product-left.p-left
+      = render 'include/product/product', product: product
+  .clearfix

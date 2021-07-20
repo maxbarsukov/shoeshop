@@ -15,11 +15,7 @@
         - if @products.empty?
           %h3 Nothing to show
         - else
-          .product-one
-            - @products.each do |product|
-              .col-md-4.product-left.p-left
-                = render 'include/product/product', product: product
-            .clearfix
+          = render 'include/product/products', products: @products
       .col-md-3.prdt-right
         = render 'include/shared/sidebar'
       .clearfix
