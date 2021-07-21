@@ -3,13 +3,17 @@
 # Table name: categories
 #
 #  id          :bigint           not null, primary key
-#  title       :string
+#  ancestry    :string
 #  bytitle     :string
-#  keywords    :string
 #  description :string
+#  keywords    :string
+#  title       :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  ancestry    :string
+#
+# Indexes
+#
+#  index_categories_on_ancestry  (ancestry)
 #
 class Category < ApplicationRecord
   has_ancestry

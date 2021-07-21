@@ -7,6 +7,10 @@
 #  updated_at :datetime         not null
 #  user_id    :bigint
 #
+# Indexes
+#
+#  index_carts_on_user_id  (user_id)
+#
 class Cart < ApplicationRecord
   belongs_to :user
 
