@@ -19,11 +19,6 @@
           .text-center
             != pagy_bootstrap_nav_js(@pagy)
       .col-md-3.prdt-right
-        = simple_form_for :search, url: product_index_path, method: "GET" do |f|
-          = f.input :categories, label: "Category",  collection: Category.all.map(&:title), as: :check_boxes
-          = f.input :brands, label: "Brand", collection: Brand.all.map(&:title), as: :check_boxes
-          = f.submit "Search", class: "btn btn-primary"
-          = link_to "Reset", product_index_path
-      /= render 'include/shared/sidebar'
+        = render 'include/shared/sidebar'
       .clearfix
 / prdt-ends
