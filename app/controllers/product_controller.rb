@@ -5,7 +5,13 @@ class ProductController < ApplicationController
   after_action :register_visit, only: [:show]
 
   def index
-    @pagy, @products = pagy(Product.active)
+    if params['search']
+      @filter = params['search']['brands'].concat(params['search']['categories']).flatten.reject(&:blank?)
+      @products = @filter.empty? ? Product.active : Product.active.tagged_with(@filter, any: true)
+    else
+      @products = Product.active
+    end
+    @pagy, @products = pagy(@products)
   end
 
   def show
