@@ -83,6 +83,9 @@ gem 'pagy', '~> 4.10', '>= 4.10.1'
 # A rack middleware for throttling and blocking abusive requests
 gem 'rack-attack', '~> 6.5'
 
+# Use to tag a single model on several contexts
+gem 'acts-as-taggable-on', '~> 8.1'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
