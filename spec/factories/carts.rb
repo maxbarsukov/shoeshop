@@ -9,6 +9,10 @@
 #  updated_at :datetime         not null
 #  user_id    :bigint
 #
+# Indexes
+#
+#  index_carts_on_user_id  (user_id)
+#
 FactoryBot.define do
   factory :cart do
     association :user, factory: :user

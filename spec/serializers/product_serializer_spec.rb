@@ -5,20 +5,25 @@
 # Table name: products
 #
 #  id          :bigint           not null, primary key
-#  category_id :integer
-#  brand_id    :integer
-#  title       :string
 #  bytitle     :string
 #  content     :text
-#  price       :float
-#  old_price   :float
-#  status      :integer
-#  keywords    :string
 #  description :string
-#  img         :string           default("no_image.jpg")
 #  hit         :integer          default("not_hit")
+#  img         :string           default("no_image.jpg")
+#  keywords    :string
+#  old_price   :float
+#  price       :float
+#  status      :integer
+#  title       :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  brand_id    :integer
+#  category_id :integer
+#
+# Indexes
+#
+#  index_products_on_brand_id     (brand_id)
+#  index_products_on_category_id  (category_id)
 #
 require 'rails_helper'
 
