@@ -366,7 +366,7 @@ product_attributes = [
 ]
 
 product_attributes.each do |attr|
-  product = Product.create(attr[:data]) unless Product.where(attr[:data]).first
+  product = Product.create!(attr[:data]) unless Product.where(attr[:data]).first
   product.category_list.add(attr[:tags][:category_list])
   product.brand_list.add(attr[:tags][:brand_list])
   product.save!
