@@ -6,35 +6,35 @@ but rather visit the [website](https://shoeeshop.herokuapp.com/) and see everyth
 
 ## Main page
 
-![Main page](https://github.com/maxbarsukov/shoeshop/tree/master/docs/images/1-main-page-1.png)
+![Main page](https://github.com/maxbarsukov/shoeshop/raw/master/docs/images/1-main-page-1.png)
 
-![Brands section](https://github.com/maxbarsukov/shoeshop/tree/master/docs/images/2-main-page-2.png)
+![Brands section](https://github.com/maxbarsukov/shoeshop/raw/master/docs/images/2-main-page-2.png)
 
-![Hits section](https://github.com/maxbarsukov/shoeshop/tree/master/docs/images/3-main-page-3.png)
+![Hits section](https://github.com/maxbarsukov/shoeshop/raw/master/docs/images/3-main-page-3.png)
 
 ## Products
 
-![All products](https://github.com/maxbarsukov/shoeshop/tree/master/docs/images/4-all-products.png)
+![All products](https://github.com/maxbarsukov/shoeshop/raw/master/docs/images/4-all-products.png)
 
-![Product page](https://github.com/maxbarsukov/shoeshop/tree/master/docs/images/10-product-page.png)
+![Product page](https://github.com/maxbarsukov/shoeshop/raw/master/docs/images/10-product-page.png)
 
 ## Search
 
-![Searching products](https://github.com/maxbarsukov/shoeshop/tree/master/docs/images/6-search-1.png)
+![Searching products](https://github.com/maxbarsukov/shoeshop/raw/master/docs/images/6-search-1.png)
 
-![Search page](https://github.com/maxbarsukov/shoeshop/tree/master/docs/images/7-search-2.png)
+![Search page](https://github.com/maxbarsukov/shoeshop/raw/master/docs/images/7-search-2.png)
 
-![Filter products](https://github.com/maxbarsukov/shoeshop/tree/master/docs/images/21-filter-products.png)
+![Filter products](https://github.com/maxbarsukov/shoeshop/raw/master/docs/images/21-filter-products.png)
 
 
 ## Cart
 
-![Add to cart](https://github.com/maxbarsukov/shoeshop/tree/master/docs/images/11-add-to-cart.png)
+![Add to cart](https://github.com/maxbarsukov/shoeshop/raw/master/docs/images/11-add-to-cart.png)
 
-![Cart](https://github.com/maxbarsukov/shoeshop/tree/master/docs/images/5-cart.png)
+![Cart](https://github.com/maxbarsukov/shoeshop/raw/master/docs/images/5-cart.png)
 
 ## Admin
 
-![Admin page](https://github.com/maxbarsukov/shoeshop/tree/master/docs/images/15-admin-page-2.png)
+![Admin page](https://github.com/maxbarsukov/shoeshop/raw/master/docs/images/15-admin-page-2.png)
 
-![Oauth page](https://github.com/maxbarsukov/shoeshop/tree/master/docs/images/17-oauthn-page-2.png)
+![Oauth page](https://github.com/maxbarsukov/shoeshop/raw/master/docs/images/17-oauthn-page-2.png)
