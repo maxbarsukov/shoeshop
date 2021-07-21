@@ -6,6 +6,8 @@
 
 # ShoeShop
 
+> A simple yet fully functional web-shop application built with Ruby on Rails
+
 This app is a store with features close to the real ones.
 
 The user can add products to the cart and buy, navigate by categories and brands, search, filter and sort products.
