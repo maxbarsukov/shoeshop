@@ -36,6 +36,7 @@ You can go to the [website](https://shoeeshop.herokuapp.com/) or view the images
 - `rails_admin` for admin page
 - `HAML` as templating engine for HTML
 - `CoffeeScript` instead of JS in scripts
+- Using `jQuery` and plugins: `easydropdown`, `responsiveslides`, `simpleCart`, `typeahead`, etc.
 - `meta-tags` for SEO optimization
 - `OmniAuth` provides authentication using third-party credentials
 - `Doorkeeper` as `OAuth 2` provider and `API` authenticator
