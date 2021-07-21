@@ -42,11 +42,8 @@
             = succeed "Prada" do
               %i
 
-.w_sidebar
-  = simple_form_for :search, url: product_index_path, method: "GET" do |f|
-    .sky-form.row1.row2.scroll-pane
-      = f.input :categories, label: "Category", collection: Category.all.map(&:title), as: :check_boxes
-    .sky-form.row1.row2.scroll-pane
-      = f.input :brands, label: "Brand", collection: Brand.all.map(&:title), as: :check_boxes
-    = f.submit "Search", class: "btn btn-primary"
-    = link_to "Reset", product_index_path
+= simple_form_for :search, url: product_index_path, method: "GET" do |f|
+  = f.input :categories, label: "Category", collection: Category.all.map(&:title), as: :check_boxes
+  = f.input :brands, label: "Brand", collection: Brand.all.map(&:title), as: :check_boxes
+  = f.submit "Search", class: "btn btn-primary"
+  = link_to "Reset", product_index_path
