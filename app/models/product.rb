@@ -35,6 +35,9 @@ class Product < ApplicationRecord
 
   has_many :galleries
 
+  acts_as_taggable_on :categories
+  acts_as_taggable_on :brands
+
   enum hit: { hit: 1, not_hit: 0 }
   scope :active, -> { where(status: 1) }
 
