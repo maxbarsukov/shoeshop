@@ -2,40 +2,31 @@
 
 require 'faker'
 
-brand_attributes = [{
-                      title: 'Ecco', bytitle: 'ecco',
-                      img: 'ecco.jpg', description: Faker::Superhero.name
-                    },
-                    {
-                      title: 'Gucci', bytitle: 'gucci', img: 'gucci.jpg',
-                      description: Faker::Superhero.name
-                    },
-                    {
-                      title: 'Hugo Boss', bytitle: 'hugo-boss',
-                      img: 'hugo-boss.jpg', description: Faker::Superhero.name
-                    },
-                    {
-                      title: 'Lacoste', bytitle: 'lacoste', img: 'lacoste.jpg',
-                      description: Faker::Superhero.name
-                    },
-                    {
-                      title: 'Prada', bytitle: 'prada', img: 'prada.jpg',
-                      description: Faker::Superhero.name
-                    }]
 
-brand_attributes.each do |attr|
-  Brand.create!(attr) unless Brand.where(attr).first
-end
+# Brands
 
+ecco      = Brand.create!(title: 'Ecco', bytitle: 'ecco', img: 'ecco.jpg',
+                          description: Faker::Superhero.name)
+gucci     = Brand.create!(title: 'Gucci', bytitle: 'gucci', img: 'gucci.jpg',
+                          description: Faker::Superhero.name)
+hugo_boss = Brand.create!(title: 'Hugo Boss', bytitle: 'hugo-boss',img: 'hugo-boss.jpg',
+                          description: Faker::Superhero.name)
+lacoste   = Brand.create!(title: 'Lacoste', bytitle: 'lacoste', img: 'lacoste.jpg',
+                          description: Faker::Superhero.name)
+prada     = Brand.create!(title: 'Prada', bytitle: 'prada', img: 'prada.jpg',
+                          description: Faker::Superhero.name)
+
+
+# Categories
 
 men = Category.create!(title: 'Men', bytitle: 'men', keywords: 'men', description: 'for men')
 women = Category.create!(title: 'Women', bytitle: 'women', keywords: 'women', description: 'for women')
 kids = Category.create!(title: 'Kids', bytitle: 'kids', keywords: 'kids', description: 'for kids')
 
 sling = Category.create!(title: 'Sling', bytitle: 'sling', keywords: 'sling', description: 'sling', parent: women)
-sleepons = Category.create!(title: 'Sleepons', bytitle: 'sleepons', keywords: 'sleepons', description: 'sleepons', parent: women)
+slipons = Category.create!(title: 'Slipons', bytitle: 'slipons', keywords: 'slipons', description: 'slipons', parent: women)
 
-flipflops = Category.create!(title: 'Flipflops', bytitle: 'flipflops', keywords: 'flipflops', description: 'flipflops', parent: sleepons)
+flipflops = Category.create!(title: 'Flipflops', bytitle: 'flipflops', keywords: 'flipflops', description: 'flipflops', parent: slipons)
 highheels = Category.create!(title: 'Highheels', bytitle: 'highheels', keywords: 'highheels', description: 'highheels', parent: sling)
 
 loafers = Category.create!(title: 'Loafers', bytitle: 'loafers', keywords: 'loafers', description: 'loafers', parent: men)
@@ -49,235 +40,336 @@ clogs = Category.create!(title: 'Clogs', bytitle: 'clogs', keywords: 'clogs', de
 crocs = Category.create!(title: 'Crocs', bytitle: 'crocs', keywords: 'crocs', description: 'crocs', parent: kids)
 
 
+# Products
+
 product_attributes = [
   {
-    category_id: '9',
-    brand_id: '2',
-    title: 'GUCCI Tennis',
-    bytitle: '628717-H9H80-1162',
-    content: Faker::Lorem.sentence(word_count: 20),
-    price: Faker::Commerce.price(range: 20.0...50.0),
-    old_price: Faker::Commerce.price(range: 50.0..400.0),
-    status: 1,
-    keywords: 'gucci tennis italy',
-    description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-1.png',
-    hit: 1
+    data: {
+      category: sneakers,
+      brand: gucci,
+      title: 'GUCCI Tennis',
+      bytitle: '628717-H9H80-1162',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: Faker::Commerce.price(range: 20.0...50.0),
+      old_price: Faker::Commerce.price(range: 50.0..400.0),
+      status: 1,
+      keywords: 'gucci tennis italy',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'p-1.png',
+      hit: 1
+    },
+    tags: {
+      category_list: sneakers.title,
+      brand_list: gucci.title
+    }
   },
   {
-    category_id: '7',
-    brand_id: '2',
-    title: 'GUCCI sling',
-    bytitle: '659471-BKO00-4514',
-    content: Faker::Lorem.sentence(word_count: 20),
-    price: Faker::Commerce.price(range: 20.0...50.0),
-    old_price: Faker::Commerce.price(range: 50.0..400.0),
-    status: 1,
-    keywords: 'gucci matelasse italy',
-    description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-2.png',
-    hit: 1
+    data: {
+      category: highheels,
+      brand: gucci,
+      title: 'GUCCI sling',
+      bytitle: '659471-BKO00-4514',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: Faker::Commerce.price(range: 20.0...50.0),
+      old_price: Faker::Commerce.price(range: 50.0..400.0),
+      status: 1,
+      keywords: 'gucci matelasse italy',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'p-2.png',
+      hit: 1
+    },
+    tags: {
+      category_list: highheels.title,
+      brand_list: gucci.title
+    }
   },
   {
-    category_id: '9',
-    brand_id: '2',
-    title: 'GUCCI Sneakers',
-    bytitle: '663723-2SH00-9014',
-    content: Faker::Lorem.sentence(word_count: 20),
-    price: Faker::Commerce.price(range: 20.0...50.0),
-    old_price: Faker::Commerce.price(range: 50.0..400.0),
-    status: 1,
-    keywords: 'gucci sneaker italy',
-    description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-3.jpg',
-    hit: 1
+    data: {
+      category: sneakers,
+      brand: gucci,
+      title: 'GUCCI Sneakers',
+      bytitle: '663723-2SH00-9014',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: Faker::Commerce.price(range: 20.0...50.0),
+      old_price: Faker::Commerce.price(range: 50.0..400.0),
+      status: 1,
+      keywords: 'gucci sneaker italy',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'p-3.jpg',
+      hit: 1
+    },
+    tags: {
+      category_list: sneakers.title,
+      brand_list: gucci.title
+    }
   },
   {
-    category_id: '10',
-    brand_id: '3',
-    title: 'HUGO BOSS trainers',
-    bytitle: 'SATURN_LOWP_NYRS-50452024',
-    content: Faker::Lorem.sentence(word_count: 20),
-    price: Faker::Commerce.price(range: 20.0...50.0),
-    old_price: Faker::Commerce.price(range: 50.0..400.0),
-    status: 1,
-    keywords: 'hugo boss trainers',
-    description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-4.jpg',
-    hit: 1
+    data: {
+      category: convers,
+      brand: hugo_boss,
+      title: 'HUGO BOSS trainers',
+      bytitle: 'SATURN_LOWP_NYRS-50452024',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: Faker::Commerce.price(range: 20.0...50.0),
+      old_price: Faker::Commerce.price(range: 50.0..400.0),
+      status: 1,
+      keywords: 'hugo boss trainers',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'p-4.jpg',
+      hit: 1
+    },
+    tags: {
+      category_list: convers.title,
+      brand_list: hugo_boss.title
+    }
   },
   {
-    category_id: '11',
-    brand_id: '3',
-    title: 'HUGO BOSS Derby',
-    bytitle: 'KENSINGTON_DERB_BU-50385015',
-    content: Faker::Lorem.sentence(word_count: 20),
-    price: Faker::Commerce.price(range: 20.0...50.0),
-    old_price: Faker::Commerce.price(range: 50.0..400.0),
-    status: 1,
-    keywords: 'hugo boss leather shoes',
-    description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-5.jpg',
-    hit: 1
+    data: {
+      category: derby,
+      brand: hugo_boss,
+      title: 'HUGO BOSS Derby',
+      bytitle: 'KENSINGTON_DERB_BU-50385015',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: Faker::Commerce.price(range: 20.0...50.0),
+      old_price: Faker::Commerce.price(range: 50.0..400.0),
+      status: 1,
+      keywords: 'hugo boss leather shoes',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'p-5.jpg',
+      hit: 1
+    },
+    tags: {
+      category_list: derby.title,
+      brand_list: hugo_boss.title
+    }
   },
   {
-    category_id: '6',
-    brand_id: '3',
-    title: 'HUGO BOSS Flip-flops',
-    bytitle: 'PACIFIC_THNG_DIGITAL-50428976',
-    content: Faker::Lorem.sentence(word_count: 20),
-    price: Faker::Commerce.price(range: 20.0...50.0),
-    old_price: Faker::Commerce.price(range: 50.0..400.0),
-    status: 1,
-    keywords: 'hugo boss flip-flops',
-    description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-6.png',
-    hit: 1
+    data: {
+      category: flipflops,
+      brand: hugo_boss,
+      title: 'HUGO BOSS Flip-flops',
+      bytitle: 'PACIFIC_THNG_DIGITAL-50428976',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: Faker::Commerce.price(range: 20.0...50.0),
+      old_price: Faker::Commerce.price(range: 50.0..400.0),
+      status: 1,
+      keywords: 'hugo boss flip-flops',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'p-6.png',
+      hit: 1
+    },
+    tags: {
+      category_list: flipflops.title,
+      brand_list: hugo_boss.title
+    }
   },
   {
-    category_id: '14',
-    brand_id: '4',
-    title: 'LACOSTE Croco',
-    bytitle: '741CMA0007-042',
-    content: Faker::Lorem.sentence(word_count: 20),
-    price: Faker::Commerce.price(range: 20.0...50.0),
-    old_price: Faker::Commerce.price(range: 50.0..400.0),
-    status: 1,
-    keywords: 'lacoste croco',
-    description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-7.jpg',
-    hit: 1
+    data: {
+      category: crocs,
+      brand: lacoste,
+      title: 'LACOSTE Croco',
+      bytitle: '741CMA0007-042',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: Faker::Commerce.price(range: 20.0...50.0),
+      old_price: Faker::Commerce.price(range: 50.0..400.0),
+      status: 1,
+      keywords: 'lacoste croco',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'p-7.jpg',
+      hit: 1
+    },
+    tags: {
+      category_list: crocs.title,
+      brand_list: lacoste.title
+    }
   },
   {
-    category_id: '13',
-    brand_id: '4',
-    title: 'LACOSTE Suruga',
-    bytitle: '739CFA0005-95K',
-    content: Faker::Lorem.sentence(word_count: 20),
-    price: Faker::Commerce.price(range: 20.0...50.0),
-    old_price: Faker::Commerce.price(range: 50.0..400.0),
-    status: 1,
-    keywords: 'lacoste suruga',
-    description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-8.jpg',
-    hit: 0
+    data: {
+      category: clogs,
+      brand: lacoste,
+      title: 'LACOSTE Suruga',
+      bytitle: '739CFA0005-95K',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: Faker::Commerce.price(range: 20.0...50.0),
+      old_price: Faker::Commerce.price(range: 50.0..400.0),
+      status: 1,
+      keywords: 'lacoste suruga',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'p-8.jpg',
+      hit: 0
+    },
+    tags: {
+      category_list: clogs.title,
+      brand_list: lacoste.title
+    }
   },
   {
-    category_id: '9',
-    brand_id: '4',
-    title: 'LACOSTE Sneakers',
-    bytitle: '741SUC0013-J18',
-    content: Faker::Lorem.sentence(word_count: 20),
-    price: Faker::Commerce.price(range: 20.0...50.0),
-    old_price: Faker::Commerce.price(range: 50.0..400.0),
-    status: 1,
-    keywords: 'lacoste sneakers',
-    description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-9.jpg',
-    hit: 1
+    data: {
+      category: sneakers,
+      brand: lacoste,
+      title: 'LACOSTE Sneakers',
+      bytitle: '741SUC0013-J18',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: Faker::Commerce.price(range: 20.0...50.0),
+      old_price: Faker::Commerce.price(range: 50.0..400.0),
+      status: 1,
+      keywords: 'lacoste sneakers',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'p-9.jpg',
+      hit: 1
+    },
+    tags: {
+      category_list: sneakers.title,
+      brand_list: lacoste.title
+    }
   },
   {
-    category_id: '8',
-    brand_id: '5',
-    title: 'PRADA Loafers',
-    bytitle: '1D246M_055_F0002_F_B050',
-    content: Faker::Lorem.sentence(word_count: 20),
-    price: Faker::Commerce.price(range: 20.0...50.0),
-    old_price: Faker::Commerce.price(range: 50.0..400.0),
-    status: 1,
-    keywords: 'prada loafers',
-    description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-10.jpg',
-    hit: 1
+    data: {
+      category: loafers,
+      brand: prada,
+      title: 'PRADA Loafers',
+      bytitle: '1D246M_055_F0002_F_B050',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: Faker::Commerce.price(range: 20.0...50.0),
+      old_price: Faker::Commerce.price(range: 50.0..400.0),
+      status: 1,
+      keywords: 'prada loafers',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'p-10.jpg',
+      hit: 1
+    },
+    tags: {
+      category_list: loafers.title,
+      brand_list: prada.title
+    }
   },
   {
-    category_id: '4',
-    brand_id: '5',
-    title: 'PRADA Shoes',
-    bytitle: '2EG312_B4L_F0D56',
-    content: Faker::Lorem.sentence(word_count: 20),
-    price: Faker::Commerce.price(range: 20.0...50.0),
-    old_price: Faker::Commerce.price(range: 50.0..400.0),
-    status: 1,
-    keywords: 'prada derby shoes',
-    description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-11.jpg',
-    hit: 0
+    data: {
+      category: sling,
+      brand: prada,
+      title: 'PRADA Shoes',
+      bytitle: '2EG312_B4L_F0D56',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: Faker::Commerce.price(range: 20.0...50.0),
+      old_price: Faker::Commerce.price(range: 50.0..400.0),
+      status: 1,
+      keywords: 'prada derby shoes',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'p-11.jpg',
+      hit: 0
+    },
+    tags: {
+      category_list: sling.title,
+      brand_list: prada.title
+    }
   },
   {
-    category_id: '5',
-    brand_id: '5',
-    title: 'PRADA Slip-ons',
-    bytitle: '4D3488_71L_F0632',
-    content: Faker::Lorem.sentence(word_count: 20),
-    price: Faker::Commerce.price(range: 20.0...50.0),
-    old_price: Faker::Commerce.price(range: 50.0..400.0),
-    status: 1,
-    keywords: 'prada slip-ons',
-    description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-12.jpg',
-    hit: 1
+    data: {
+      category: slipons,
+      brand: prada,
+      title: 'PRADA Slip-ons',
+      bytitle: '4D3488_71L_F0632',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: Faker::Commerce.price(range: 20.0...50.0),
+      old_price: Faker::Commerce.price(range: 50.0..400.0),
+      status: 1,
+      keywords: 'prada slip-ons',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'p-12.jpg',
+      hit: 1
+    },
+    tags: {
+      category_list: slipons.title,
+      brand_list: prada.title
+    }
   },
   {
-    category_id: '8',
-    brand_id: '1',
-    title: 'ECCO Moccasins',
-    bytitle: '370843-02001',
-    content: Faker::Lorem.sentence(word_count: 20),
-    price: Faker::Commerce.price(range: 20.0...50.0),
-    old_price: Faker::Commerce.price(range: 50.0..400.0),
-    status: 1,
-    keywords: 'ecco moccasins',
-    description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-13.jpg',
-    hit: 0
+    data: {
+      category: business,
+      brand: ecco,
+      title: 'ECCO Moccasins',
+      bytitle: '370843-02001',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: Faker::Commerce.price(range: 20.0...50.0),
+      old_price: Faker::Commerce.price(range: 50.0..400.0),
+      status: 1,
+      keywords: 'ecco moccasins',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'p-13.jpg',
+      hit: 0
+    },
+    tags: {
+      category_list: business.title,
+      brand_list: ecco.title
+    }
   },
   {
-    category_id: '13',
-    brand_id: '1',
-    title: 'ECCO Clogs',
-    bytitle: '291603-01001',
-    content: Faker::Lorem.sentence(word_count: 20),
-    price: Faker::Commerce.price(range: 20.0...50.0),
-    old_price: Faker::Commerce.price(range: 50.0..400.0),
-    status: 1,
-    keywords: 'ecco clogs',
-    description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-14.jpg',
-    hit: 1
+    data: {
+      category: clogs,
+      brand: ecco,
+      title: 'ECCO Clogs',
+      bytitle: '291603-01001',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: Faker::Commerce.price(range: 20.0...50.0),
+      old_price: Faker::Commerce.price(range: 50.0..400.0),
+      status: 1,
+      keywords: 'ecco clogs',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'p-14.jpg',
+      hit: 1
+    },
+    tags: {
+      category_list: clogs.title,
+      brand_list: ecco.title
+    }
   },
   {
-    category_id: '9',
-    brand_id: '1',
-    title: 'ECCO Sneakers',
-    bytitle: '712642-01303',
-    content: Faker::Lorem.sentence(word_count: 20),
-    price: Faker::Commerce.price(range: 20.0...50.0),
-    old_price: Faker::Commerce.price(range: 50.0..400.0),
-    status: 1,
-    keywords: 'ecco sneakers',
-    description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-15.jpg',
-    hit: 1
+    data: {
+      category: sneakers,
+      brand: ecco,
+      title: 'ECCO Sneakers',
+      bytitle: '712642-01303',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: Faker::Commerce.price(range: 20.0...50.0),
+      old_price: Faker::Commerce.price(range: 50.0..400.0),
+      status: 1,
+      keywords: 'ecco sneakers',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'p-15.jpg',
+      hit: 1
+    },
+    tags: {
+      category_list: sneakers.title,
+      brand_list: ecco.title
+    }
   },
   {
-    category_id: '10',
-    brand_id: '1',
-    title: 'ECCO CMA',
-    bytitle: '880124-01007',
-    content: Faker::Lorem.sentence(word_count: 20),
-    price: Faker::Commerce.price(range: 20.0...50.0),
-    old_price: Faker::Commerce.price(range: 50.0..400.0),
-    status: 1,
-    keywords: 'ecco sneakers',
-    description: Faker::Lorem.sentence(word_count: 10),
-    img: 'p-16.jpg',
-    hit: 0
+    data: {
+      category: convers,
+      brand: ecco,
+      title: 'ECCO CMA',
+      bytitle: '880124-01007',
+      content: Faker::Lorem.sentence(word_count: 20),
+      price: Faker::Commerce.price(range: 20.0...50.0),
+      old_price: Faker::Commerce.price(range: 50.0..400.0),
+      status: 1,
+      keywords: 'ecco sneakers',
+      description: Faker::Lorem.sentence(word_count: 10),
+      img: 'p-16.jpg',
+      hit: 0
+    },
+    tags: {
+      category_list: convers.title,
+      brand_list: ecco.title
+    }
   }
 ]
 
 product_attributes.each do |attr|
-  Product.create!(attr) unless Product.where(attr).first
+  product = Product.create(attr[:data]) unless Product.where(attr[:data]).first
+  product.category_list.add(attr[:tags][:category_list])
+  product.brand_list.add(attr[:tags][:brand_list])
+  product.save!
 end
 
 connection = ActiveRecord::Base.connection()
